@@ -4,3 +4,6 @@ O que eu vou aprender
 - Bash
 - Git
 - Ciência da computação
+- HTML
+- CSS
+
