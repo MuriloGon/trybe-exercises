@@ -20,3 +20,7 @@ ul>li:nth-child(2n) {
     letter-spacing  : 10px;
     background-color: tomato;
 }
+
+.fancy-color{
+    background-color: lime;
+}
