@@ -1,9 +1,0 @@
-O que eu vou aprender
-
-- Unix
-- Bash
-- Git
-- Ciência da computação
-- HTML
-- CSS
-
