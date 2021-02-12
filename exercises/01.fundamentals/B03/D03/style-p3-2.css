@@ -1,0 +1,44 @@
+div {
+    margin : 0;
+    padding: 0;
+}
+
+/* .primary-color {
+    color: aqua;
+}
+
+.secondary-color {
+    color: blueviolet;
+}
+
+.complementary-color {
+    color: blue;
+}
+
+.dark-color {
+    color: coral;
+}
+
+.bright-color {
+    color: darkgreen;
+} */
+
+div:nth-of-type(1) {
+    color: deepskyblue;
+}
+
+div:nth-of-type(2) {
+    color: dodgerblue;
+}
+
+div:nth-of-type(3) {
+    color: fuchsia;
+}
+
+div:nth-of-type(4) {
+    color: greenyellow;
+}
+
+div:nth-of-type(5) {
+    color: indigo;
+}
