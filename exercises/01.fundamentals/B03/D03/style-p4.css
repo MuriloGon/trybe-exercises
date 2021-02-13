@@ -65,3 +65,14 @@ h6 em {
   font-size: 40px;
   border   : 1px solid black;
 }
+
+/* Requisite 3*/
+/*3.1*/
+li {
+  font-size: 20px;
+}
+
+/*3.2*/
+li em {
+  font-weight: bold;
+}
