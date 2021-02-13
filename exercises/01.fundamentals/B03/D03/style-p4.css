@@ -42,3 +42,26 @@ ol>li.prime {
   text-transform: capitalize;
   font-weight   : bold;
 }
+
+
+/* Requisite 2*/
+/*2.1*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: red;
+}
+
+/*2.2*/
+h1 em,
+h2 em,
+h3 em,
+h4 em,
+h5 em,
+h6 em {
+  font-size: 40px;
+  border   : 1px solid black;
+}
