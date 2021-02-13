@@ -1,0 +1,100 @@
+/*
+1 - 
+  1.1 - Make all items in Ordered Lists a yellow background color. 
+  1.2 - If item numbering is EVEN, make the font color green. 
+  1.3 - If the number is considered a prime, use the text-transform property to capitalize the text. 
+  (Hint: combining classes can be useful here).
+
+2 - 
+2.1 - Make all Header tags (h1, h2 ...) have red font color and, 
+2.2 - if any of them are in italics, increase its size to 40px and add a solid black 1px border.
+
+3 - 
+3.1 - Make all li's have 20px font size and, 
+3.2 - for all italicized text within any li, use the font-weight property to make it bold.
+
+4 - 
+4.1 - In the list of programming languages, make the first 3 of the list have blue font color and,
+4.2 - if any have "java *" in the text, use a pink background color.
+
+5 - 
+5.1 - (Bonus) For each link in the list of the developer person, make sure that by hovering over the mouse
+in each one, 
+5.2 - the text should be in bold and assume the font color "thematic of the site"
+  Tip 1: Use the selector :hover to control the mouse over.
+  Tip 2: Suggestion of standard colors. StackOverflow (orange), W3Schools (green), MDN (black), DevDocs 
+  (yellow), Trybe (green).
+*/
+
+/* Requisite 1 */
+/* 1.1 */
+ol>li {
+  background-color: yellow;
+}
+
+/*1.2*/
+ol>li:nth-child(even) {
+  color: green;
+}
+
+/* 1.3 */
+ol>li.prime {
+  text-transform: capitalize;
+  font-weight   : bold;
+}
+
+
+/* Requisite 2*/
+/*2.1*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: red;
+}
+
+/*2.2*/
+h1 em,
+h2 em,
+h3 em,
+h4 em,
+h5 em,
+h6 em {
+  font-size: 40px;
+  border   : 1px solid black;
+}
+
+/* Requisite 3*/
+/*3.1*/
+li {
+  font-size: 20px;
+}
+
+/*3.2*/
+li em {
+  font-weight: bold;
+}
+
+/* Requisite 4*/
+/* 4.1 */
+ul>li:nth-child(-n+3) {
+  color: blue;
+}
+
+/* 4.2 */
+ul>li:nth-child(-n+3)[class*="java"] {
+  background-color: pink;
+}
+
+/* Requisite 5*/
+/*5.1*/
+a, a:visited{
+  all: unset;
+  cursor: pointer;
+}
+li[class*="orange"]:hover{color: orange; font-weight: bold;}
+li[class*="green"]:hover{color: green; font-weight: bold;}
+li[class*="black"]:hover{color: black; font-weight: bold;}
+li[class*="yellow"]:hover{color: yellow; font-weight: bold;}

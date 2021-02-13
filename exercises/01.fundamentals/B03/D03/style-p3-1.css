@@ -1,0 +1,24 @@
+h1,
+p {
+    text-align: center;
+}
+
+ol{
+    margin-left: 12em;
+}
+ol>li {
+    text-decoration: none;
+
+}
+
+ol>li>a:hover {
+    background-color: navy;
+    color           : white;
+    cursor          : pointer;
+}
+
+ol>li>a:active {
+    font-family: monospace;
+    font-weight: bold;
+    background-color: lawngreen;
+}

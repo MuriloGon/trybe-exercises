@@ -1,0 +1,27 @@
+.caixa {
+    color         : white;
+    display       : inline-block;
+    line-height   : 50px;
+    text-align    : center;
+    vertical-align: top;
+}
+
+.width-and-height {
+    height: 50px;
+    width : 50px;
+}
+
+.padding {
+    /* insert a 20px padding in the class below to apply it to items B, C and D */
+    padding   : 20px;
+}
+
+.margin {
+    /* insert a margin of 30px in the class below to apply it to items C and D */
+    margin    : 30px;
+}
+
+.border {
+    /* insert a border with value '5px solid black' here to apply it to item D */
+    border: 10px solid black;
+}
