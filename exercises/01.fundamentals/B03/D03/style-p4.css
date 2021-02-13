@@ -87,3 +87,14 @@ ul>li:nth-child(-n+3) {
 ul>li:nth-child(-n+3)[class*="java"] {
   background-color: pink;
 }
+
+/* Requisite 5*/
+/*5.1*/
+a, a:visited{
+  all: unset;
+  cursor: pointer;
+}
+li[class*="orange"]:hover{color: orange; font-weight: bold;}
+li[class*="green"]:hover{color: green; font-weight: bold;}
+li[class*="black"]:hover{color: black; font-weight: bold;}
+li[class*="yellow"]:hover{color: yellow; font-weight: bold;}
