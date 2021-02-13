@@ -76,3 +76,14 @@ li {
 li em {
   font-weight: bold;
 }
+
+/* Requisite 4*/
+/* 4.1 */
+ul>li:nth-child(-n+3) {
+  color: blue;
+}
+
+/* 4.2 */
+ul>li:nth-child(-n+3)[class*="java"] {
+  background-color: pink;
+}
