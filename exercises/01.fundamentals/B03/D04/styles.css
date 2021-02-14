@@ -1,12 +1,20 @@
-ul.podium {
+ul,
+h3 {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
+    text-align     : center;
 }
 
-li.first{
+ul.podium>li.first {
     display: block;
+    margin : auto;
 }
-li.second, li.third{
+
+/* The inline-block propertie preserves  */
+ul.podium>li.second,
+ul.podium>li.third {
+    display: inline-block;
+}
+
+li{
     display: inline-block;
 }
