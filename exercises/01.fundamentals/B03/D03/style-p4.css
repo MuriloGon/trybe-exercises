@@ -90,11 +90,9 @@ ul>li:nth-child(-n+3)[class*="java"] {
 
 /* Requisite 5*/
 /*5.1*/
-a, a:visited{
-  all: unset;
-  cursor: pointer;
-}
-li[class*="orange"]:hover{color: orange; font-weight: bold;}
-li[class*="green"]:hover{color: green; font-weight: bold;}
-li[class*="black"]:hover{color: black; font-weight: bold;}
-li[class*="yellow"]:hover{color: yellow; font-weight: bold;}
+
+
+li[class*="orange"]:hover a{color: orange; font-weight: bold;}
+li[class*="green"]:hover a{color: green; }
+li[class*="black"]:hover a{color: black; font-weight: bold;}
+li[class*="yellow"]:hover a{color: yellow; font-weight: bold;}
