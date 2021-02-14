@@ -3,3 +3,10 @@ ul.podium {
     padding: 0;
     margin: 0;
 }
+
+li.first{
+    display: block;
+}
+li.second, li.third{
+    display: inline-block;
+}
