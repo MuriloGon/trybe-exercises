@@ -14,3 +14,7 @@ console.log("The total array sum is: ", sumResult)
 console.log(`\n== Item03 ==`)
 let average = sumResult/numbers.length;
 console.log("The average value is: ", average)
+
+// Item 04
+console.log(`\n== Item04 ==`)
+console.log(average > 20 ? "valor maior que 20": "valor menor ou igual a 20")
