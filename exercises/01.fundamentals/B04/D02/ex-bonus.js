@@ -2,7 +2,7 @@ let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 console.log("Original array", numbers);
 
 function bubbleSort(array, case_ = "+") {
-    let output = array;
+    let output = array.slice();
 
     for (let i = 1; i < output.length; i++) {
         for (let j = 0; j < i; j++) {
