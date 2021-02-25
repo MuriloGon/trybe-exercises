@@ -1,4 +1,5 @@
 let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+console.log("Original array", numbers)
 
 function bubbleSort(array, case_ = "+") {
     let output = array;
@@ -22,3 +23,7 @@ let sortedArray = bubbleSort(numbers);
 console.log(`\n== bonus01 ==`)
 console.log("Sorted array: ", sortedArray)
 
+// bonus 02
+let sortedArrayReversed = sortedArray.reverse();
+console.log(`\n== bonus02 ==`)
+console.log("Sorted array reversed: ", sortedArrayReversed)
