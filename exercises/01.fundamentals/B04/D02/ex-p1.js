@@ -36,3 +36,11 @@ if (oddNums === 0)
     console.log("No odd number has been found");
 else console.log("Odd numbers: ", oddNums)
 
+// Item 07
+console.log(`\n== Item07 ==`)
+let minNumber = numbers[0];
+for (let number of numbers) {
+    if (number < minNumber)
+        minNumber = number;
+}
+console.log("Min number: ", minNumber)
