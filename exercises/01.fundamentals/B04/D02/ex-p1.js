@@ -50,3 +50,9 @@ console.log(`\n== Item08 ==`)
 let twentyFive = [];
 for (let x = 1; x <= 25; x++) twentyFive.push(x);
 console.log('Array 1-25: ', twentyFive);
+
+// Item 09
+console.log(`\n== Item09 ==`)
+let twentyFiveByTwo = []
+for (let x of twentyFive) twentyFiveByTwo.push(x / 2);
+console.log('Array 1-25: ', twentyFiveByTwo);
