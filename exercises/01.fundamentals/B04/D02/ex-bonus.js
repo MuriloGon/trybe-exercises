@@ -19,11 +19,21 @@ function bubbleSort(array, case_ = "+") {
 }
 
 // bonus 01
+console.log(`\n== bonus01 ==`);
 let sortedArray = bubbleSort(numbers);
-console.log(`\n== bonus01 ==`)
 console.log("Sorted array: ", sortedArray)
 
 // bonus 02
-let sortedArrayReversed = sortedArray.reverse();
 console.log(`\n== bonus02 ==`)
+let sortedArrayReversed = sortedArray.reverse();
 console.log("Sorted array reversed: ", sortedArrayReversed)
+
+//bonus 03
+console.log(`\n== bonus03 ==`)
+let bonus3Array = []
+for (let n = 0; n < numbers.length; n++) {
+    if (numbers[n + 1] != (null || undefined)) {
+        bonus3Array.push(numbers[n] * numbers[n + 1]);
+    } else bonus3Array.push(numbers[n] * 2);
+}
+console.log("Bonus 3 array ", bonus3Array);
