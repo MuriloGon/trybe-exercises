@@ -28,3 +28,11 @@ for (let number of numbers) {
 }
 console.log("Max number: ", maxNumber)
 
+// Item 06
+console.log(`\n== Item06 ==`)
+let oddNums = 0;
+for (let number of numbers) if (number % 2 == 1) oddNums++;
+if (oddNums === 0)
+    console.log("No odd number has been found");
+else console.log("Odd numbers: ", oddNums)
+
