@@ -1,0 +1,20 @@
+ul,
+h3 {
+    list-style-type: none;
+    text-align     : center;
+}
+
+ul.podium>li.first {
+    display: block;
+    margin : auto;
+}
+
+/* The inline-block propertie preserves  */
+ul.podium>li.second,
+ul.podium>li.third {
+    display: inline-block;
+}
+
+li{
+    display: inline-block;
+}
