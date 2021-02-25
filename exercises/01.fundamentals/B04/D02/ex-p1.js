@@ -44,3 +44,9 @@ for (let number of numbers) {
         minNumber = number;
 }
 console.log("Min number: ", minNumber)
+
+// Item 08
+console.log(`\n== Item08 ==`)
+let twentyFive = [];
+for (let x = 1; x <= 25; x++) twentyFive.push(x);
+console.log('Array 1-25: ', twentyFive);
