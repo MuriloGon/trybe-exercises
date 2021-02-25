@@ -9,3 +9,8 @@ console.log(`\n== Item02 ==`)
 let sumResult = 0;
 for (let number of numbers) sumResult += number;
 console.log("The total array sum is: ", sumResult)
+
+// Item 03
+console.log(`\n== Item03 ==`)
+let average = sumResult/numbers.length;
+console.log("The average value is: ", average)
