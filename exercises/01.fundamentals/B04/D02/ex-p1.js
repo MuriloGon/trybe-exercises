@@ -12,9 +12,19 @@ console.log("The total array sum is: ", sumResult)
 
 // Item 03
 console.log(`\n== Item03 ==`)
-let average = sumResult/numbers.length;
+let average = sumResult / numbers.length;
 console.log("The average value is: ", average)
 
 // Item 04
 console.log(`\n== Item04 ==`)
-console.log(average > 20 ? "valor maior que 20": "valor menor ou igual a 20")
+console.log(average > 20 ? "valor maior que 20" : "valor menor ou igual a 20")
+
+// Item 05
+console.log(`\n== Item05 ==`)
+let maxNumber = null;
+for (let number of numbers) {
+    if (number > maxNumber)
+        maxNumber = number;
+}
+console.log("Max number: ", maxNumber)
+
