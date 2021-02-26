@@ -53,3 +53,19 @@ function triangle2(n) {
     } else { return null; };
 }
 triangle2(5)
+
+// Item 04
+console.log(`\n== Item04 ==`)
+function triangle3(n) {
+    if (isInt != false) {
+        let str = "";
+        for (let x = 1; x <= n; x++) {
+            let chars = x;
+            let spaces = n - x;
+            str = fillWithChar(' ', Math.round(spaces / 2)) + fillWithChar('*', chars)
+
+            if (x % 2 == 1) console.log(str);
+        };
+    } else { return null; };
+}
+triangle3(5)
