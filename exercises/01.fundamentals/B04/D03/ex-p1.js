@@ -38,3 +38,18 @@ function triangle(n) {
 }
 triangle(5)
 
+
+// Item 03
+console.log(`\n== Item03 ==`)
+function triangle2(n) {
+    if (isInt != false) {
+        let str = "";
+        for (let x = 1; x <= n; x++) {
+            let chars = x;
+            let spaces = n - x;
+            str = fillWithChar(' ', spaces) + fillWithChar('*', chars)
+            console.log(str)
+        };
+    } else { return null; };
+}
+triangle2(5)
