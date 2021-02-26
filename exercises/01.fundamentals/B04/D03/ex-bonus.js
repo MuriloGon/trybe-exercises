@@ -42,3 +42,25 @@ function funnyTriangle(n, char = '*', space = ' ') {
     }
 }
 funnyTriangle(9);
+
+
+// Item 02
+console.log(`\n== Item02 ==`)
+function isPrime(n) {
+    let primeNumbers = [];
+    for (let x = 1; x <= n; x += 1) {
+        if (n % x == 0) {
+            primeNumbers.push(x);
+            // console.log(primeNumbers)
+        }
+    }
+
+    console.log({
+        isPrime: (primeNumbers.length > 2) || primeNumbers.length == 1 ? false : true,
+        divisibleNumbers: primeNumbers
+    })
+}
+isPrime(37)
+
+
+
