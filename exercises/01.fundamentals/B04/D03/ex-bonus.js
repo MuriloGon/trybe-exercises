@@ -30,12 +30,7 @@ function funnyTriangle(n, char = '*', space = ' ') {
 
             let betweenAsteriscs = x - 2;
             let startSpaces = (n - (betweenAsteriscs + 2)) / 2;
-            console.log(
-                rCh(space, startSpaces) +
-                `${char}` +
-                rCh(space, betweenAsteriscs) +
-                `${char}`
-            )
+            console.log(`${rCh(space, startSpaces)}${char}${rCh(space, betweenAsteriscs)}${char}`)
         }
     } else {
         console.log("Enter with a positive odd number")
