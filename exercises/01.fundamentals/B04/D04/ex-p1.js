@@ -8,3 +8,10 @@ let info = {
 console.log(`\n== Item01 ==`);
 console.log('Welcome, ' + info.personagem);
 console.log('Welcome, ' + info["personagem"]);
+
+// Item 02
+console.log(`\n== Item02 ==`);
+console.log(Object.keys(info))
+info.recorrente = 'Sim';
+console.log(Object.keys(info))
+console.log('recorrente:', info.recorrente)
