@@ -33,3 +33,22 @@ function maxIndex(array) {
 }
 console.log('index -> ', minIndex(arr).index)
 console.log('num -> ', minIndex(arr).num)
+
+// Item 03
+console.log(`\n== Item03 ==`);
+let arr2 = [2, 4, 6, 7, 10, 0, -3];
+function minIndex(array) {
+    let min = {
+        num: arr[0],
+        index: 0
+    }
+    for (let indexArr in array) {
+        if (array[indexArr] < min.num) {
+            min.index = indexArr;
+            min.num = array[indexArr];
+        }
+    }
+    return min
+}
+console.log('index -> ', minIndex(arr2).index)
+console.log('num -> ', minIndex(arr2).num)
