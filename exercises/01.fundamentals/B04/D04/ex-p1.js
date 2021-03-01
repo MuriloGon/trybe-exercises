@@ -19,3 +19,7 @@ console.log('recorrente:', info.recorrente)
 // Item 03
 console.log(`\n== Item03 ==`);
 for(let datum in info) console.log(datum);
+
+// Item 04
+console.log(`\n== Item04 ==`);
+for(let datum in info) console.log(info[datum]);
