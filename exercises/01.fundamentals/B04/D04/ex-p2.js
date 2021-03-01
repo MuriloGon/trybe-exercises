@@ -52,3 +52,18 @@ function minIndex(array) {
 }
 console.log('index -> ', minIndex(arr2).index)
 console.log('num -> ', minIndex(arr2).num)
+
+// Item 04
+console.log(`\n== Item04 ==`);
+let names = ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];
+
+function maxChars(array) {
+    let indexMaxChars = 0;
+    for (let name of names) {
+        if (name.length > names[indexMaxChars].length) 
+            indexMaxChars = array.findIndex(x => x == name);
+    }
+    console.log(indexMaxChars)
+    return array[indexMaxChars]
+}
+console.log(maxChars(names))
