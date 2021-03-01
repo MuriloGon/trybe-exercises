@@ -15,3 +15,7 @@ console.log(Object.keys(info))
 info.recorrente = 'Sim';
 console.log(Object.keys(info))
 console.log('recorrente:', info.recorrente)
+
+// Item 03
+console.log(`\n== Item03 ==`);
+for(let datum in info) console.log(datum);
