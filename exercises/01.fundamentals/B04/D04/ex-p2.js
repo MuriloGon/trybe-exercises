@@ -111,3 +111,21 @@ function summatory(N) {
     return output;
 }
 console.log("N=5 ->", summatory(5))
+
+// Item 07
+console.log(`\n== Item07 ==`);
+function verifyEndWord(word, endWord) {
+    let offSetWords = word.length - endWord.length;
+
+    if (offSetWords < 0) return null;
+
+    let isEnd = true;
+
+    for (let l = 0; l < word.length - offSetWords; l += 1) {
+        isEnd = isEnd && (word[l + offSetWords] === endWord[l])
+    }
+
+    return isEnd;
+}
+console.log(verifyEndWord('trybe', 'be'))
+console.log(verifyEndWord('joaofernando', 'fernan'))
