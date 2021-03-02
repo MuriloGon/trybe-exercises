@@ -99,6 +99,15 @@ function repeatedNum(array) {
 
     // return the last item (most repeated number)
     // (0, 1) -> (key, value) -> (number-repeated, times-repeated)
-    return Number(pair[pair.length-1][0])
+    return Number(pair[pair.length - 1][0])
 }
 console.log(repeatedNum(arr3))
+
+// Item 06
+console.log(`\n== Item06 ==`);
+function summatory(N) {
+    output = 0;
+    for (let n = 1; n <= N; n += 1) output += n;
+    return output;
+}
+console.log("N=5 ->", summatory(5))
