@@ -1,9 +1,10 @@
 //item01
 function mySelfPTags(text) {
-    let pTags = document.getElementsByTagName('p');
-    for (let elP of pTags) {
-        elP.innerText = text;
-    }
+    let pTag = document.getElementsByTagName('p')[1];
+    pTag.innerHTML = text;
+    // for (let elP of pTags) {
+        // elP.innerText = text;
+    // }
 }
 setTimeout(() => {
     mySelfPTags("Trabalhando, ganhando bem e viajando pelo mundo");
