@@ -25,3 +25,15 @@ setTimeout(() => {
 setTimeout(() => {
     changeSquareBgColor('center-content', 'white');
 }, 1500);
+
+//item04
+function fixH1() {
+    let h1Tags = document.getElementsByClassName('title');
+    for (let h1 of h1Tags) {
+        h1.innerHTML =
+            h1.innerHTML.replace('JavaEscripito', 'Javascript');
+    }
+}
+setTimeout(() => {
+    fixH1();
+}, 2000);
