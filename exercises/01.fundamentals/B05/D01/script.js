@@ -1,10 +1,7 @@
 //item01
 function mySelfPTags(text) {
     let pTag = document.getElementsByTagName('p')[1];
-    pTag.innerHTML = text;
-    // for (let elP of pTags) {
-        // elP.innerText = text;
-    // }
+    pTag.innerText = text;
 }
 setTimeout(() => {
     mySelfPTags("Trabalhando, ganhando bem e viajando pelo mundo");
@@ -31,8 +28,8 @@ setTimeout(() => {
 function fixH1() {
     let h1Tags = document.getElementsByClassName('title');
     for (let h1 of h1Tags) {
-        h1.innerHTML =
-            h1.innerHTML.replace('JavaEscripito', 'Javascript');
+        h1.innerText =
+            h1.innerText.replace('JavaEscripito', 'Javascript');
     }
 }
 setTimeout(() => {
@@ -43,7 +40,7 @@ setTimeout(() => {
 function pTagsToUppercase() {
     let pTags = document.getElementsByTagName('p');
     for (let p of pTags) {
-        p.innerHTML = p.innerHTML.toUpperCase()
+        p.innerText = p.innerText.toUpperCase()
     }
 }
 setTimeout(() => {
@@ -54,7 +51,7 @@ setTimeout(() => {
 function logAllPTagsText() {
     let pTags = document.getElementsByTagName('p');
     for (let p of pTags) {
-        console.log(p.innerHTML);
+        console.log(p.innerText);
     }
 }
 setTimeout(() => {
