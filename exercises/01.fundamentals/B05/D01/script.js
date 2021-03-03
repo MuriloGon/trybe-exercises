@@ -21,3 +21,7 @@ setTimeout(() => {
     changeSquareBgColor('main-content', 'rgb(76,164,109)');
 }, 1000);
 
+//item03
+setTimeout(() => {
+    changeSquareBgColor('center-content', 'white');
+}, 1500);
