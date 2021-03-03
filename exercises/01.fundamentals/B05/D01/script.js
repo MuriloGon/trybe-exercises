@@ -48,3 +48,14 @@ function pTagsToUppercase() {
 setTimeout(() => {
     pTagsToUppercase();
 }, 2500);
+
+//item05
+function logAllPTagsText() {
+    let pTags = document.getElementsByTagName('p');
+    for (let p of pTags) {
+        console.log(p.innerHTML);
+    }
+}
+setTimeout(() => {
+    logAllPTagsText();
+}, 3000);
