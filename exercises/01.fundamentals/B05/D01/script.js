@@ -37,3 +37,14 @@ function fixH1() {
 setTimeout(() => {
     fixH1();
 }, 2000);
+
+//item04
+function pTagsToUppercase() {
+    let pTags = document.getElementsByTagName('p');
+    for (let p of pTags) {
+        p.innerHTML = p.innerHTML.toUpperCase()
+    }
+}
+setTimeout(() => {
+    pTagsToUppercase();
+}, 2500);
