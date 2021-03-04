@@ -33,3 +33,13 @@ let pElement1 = addP(divMainContent, 'string teste do parágrafo')
 //item 05 and Item 06
 let divLeftContent = addDiv(divMainContent, 'left-content')
 let divRightContent = addDiv(divMainContent, 'right-content')
+
+//item 07
+function addImg(parentTag, src, className) {
+    let imgElement = document.createElement('img');
+    imgElement.src = src;
+    imgElement.className = className;
+    parentTag.appendChild(imgElement);
+    return imgElement;
+}
+let imgElement = addImg(divLeftContent, 'https://picsum.photos/200', 'small-image');
