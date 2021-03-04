@@ -19,3 +19,13 @@ let divMainContent = addDiv(body, ['main-content']);
 
 //item 03
 let divChildMainContent = addDiv(divMainContent, ['center-content']);
+
+//item 04
+function addP(parentElement, text, classList = null) {
+    let pEle = document.createElement('p');
+    pEle.innerText = text;
+    if (classList != null) pEle.className = classList;
+    parentElement.appendChild(pEle);
+    return pEle;
+}
+let pElement1 = addP(divMainContent, 'string teste do parágrafo')
