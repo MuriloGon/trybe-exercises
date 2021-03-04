@@ -61,3 +61,17 @@ let olElement1 = addOl(
     divRightContent,
     ['um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez']
 );
+
+//item 09
+function addH3ToChilds(parentElement) {
+    let parentEl = parentElement;
+    for (let i in parentEl.childNodes) {
+        let child = parentElement.children[i]
+        
+        let h3 = document.createElement('h3');
+        h3.innerHTML = `${i} - Elemento H3`;
+
+        child.insertBefore(h3, child.children[0]);
+    }
+}
+addH3ToChilds(divMainContent)
