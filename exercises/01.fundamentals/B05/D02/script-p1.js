@@ -43,3 +43,21 @@ function addImg(parentTag, src, className) {
     return imgElement;
 }
 let imgElement = addImg(divLeftContent, 'https://picsum.photos/200', 'small-image');
+
+//item 08
+function addOl(parentTag, list) {
+    let ulElement = document.createElement('ul');
+
+    for (let li of list) {
+        let liElement = document.createElement('li');
+        liElement.innerText = li.toString();
+        ulElement.appendChild(liElement);
+    }
+
+    parentTag.appendChild(ulElement);
+    return ulElement;
+}
+let olElement1 = addOl(
+    divRightContent,
+    ['um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez']
+);
