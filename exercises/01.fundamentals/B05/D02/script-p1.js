@@ -29,3 +29,7 @@ function addP(parentElement, text, classList = null) {
     return pEle;
 }
 let pElement1 = addP(divMainContent, 'string teste do parágrafo')
+
+//item 05 and Item 06
+let divLeftContent = addDiv(divMainContent, 'left-content')
+let divRightContent = addDiv(divMainContent, 'right-content')
