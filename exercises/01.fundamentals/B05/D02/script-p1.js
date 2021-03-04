@@ -16,3 +16,6 @@ function addDiv(elementParent, classList) {
     return div;
 }
 let divMainContent = addDiv(body, ['main-content']);
+
+//item 03
+let divChildMainContent = addDiv(divMainContent, ['center-content']);
