@@ -24,12 +24,13 @@ let divChildMainContent = addDiv(divMainContent, ['center-content']);
 //item 04
 function addP(parentElement, text, classList = null) {
     let pEle = document.createElement('p');
+    pEle.style['textAlign'] = 'center';
     pEle.innerText = text;
     if (classList != null) pEle.className = classList;
     parentElement.appendChild(pEle);
     return pEle;
 }
-let pElement1 = addP(divMainContent, 'string teste do parágrafo');
+let pElement1 = addP(divChildMainContent, 'string teste do parágrafo');
 
 //item 05 and Item 06
 let divLeftContent = addDiv(divMainContent, 'left-content');
@@ -67,7 +68,7 @@ let olElement1 = addOl(
 function addH3ToChilds(parentElement) {
     let parentEl = parentElement;
     let lenChildren = parentEl.childNodes.length
-    
+
     for (let i = 0; i < lenChildren; i += 1) {
         console.log(i)
         let child = parentElement.children[i]
