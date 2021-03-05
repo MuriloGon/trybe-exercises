@@ -29,11 +29,11 @@ function addP(parentElement, text, classList = null) {
     parentElement.appendChild(pEle);
     return pEle;
 }
-let pElement1 = addP(divMainContent, 'string teste do parágrafo')
+let pElement1 = addP(divMainContent, 'string teste do parágrafo');
 
 //item 05 and Item 06
-let divLeftContent = addDiv(divMainContent, 'left-content')
-let divRightContent = addDiv(divMainContent, 'right-content')
+let divLeftContent = addDiv(divMainContent, 'left-content');
+let divRightContent = addDiv(divMainContent, 'right-content');
 
 //item 07
 function addImg(parentTag, src, className) {
@@ -75,4 +75,4 @@ function addH3ToChilds(parentElement) {
         child.insertBefore(h3, child.children[0]);
     }
 }
-addH3ToChilds(divMainContent)
+addH3ToChilds(divMainContent);
