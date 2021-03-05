@@ -10,3 +10,6 @@ divMainContent.removeChild(divLeftContent);
 
 //item 04
 divRightContent.style.margin = '0 auto';
+
+// item 05
+divChildMainContent.style['backgroundColor'] = 'green';
