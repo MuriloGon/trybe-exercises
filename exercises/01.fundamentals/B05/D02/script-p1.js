@@ -66,9 +66,12 @@ let olElement1 = addOl(
 //item 09
 function addH3ToChilds(parentElement) {
     let parentEl = parentElement;
-    for (let i in parentEl.childNodes) {
+    let lenChildren = parentEl.childNodes.length
+    
+    for (let i = 0; i < lenChildren; i += 1) {
+        console.log(i)
         let child = parentElement.children[i]
-        
+
         let h3 = document.createElement('h3');
         h3.innerHTML = `${i} - Elemento H3`;
 
