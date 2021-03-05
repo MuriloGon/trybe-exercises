@@ -13,3 +13,6 @@ divRightContent.style.margin = '0 auto';
 
 // item 05
 divChildMainContent.style['backgroundColor'] = 'green';
+
+// item 06
+for (let i = 0; i < 2; i += 1) olElement1.removeChild(olElement1.lastChild);
