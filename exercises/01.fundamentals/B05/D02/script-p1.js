@@ -5,8 +5,9 @@ function addH1(parentElement, innerText) {
     let h1 = document.createElement('h1');
     h1.innerText = innerText;
     parentElement.append(h1);
+    return h1;
 }
-addH1(body, 'Exercise 5.2 - JavaScript DOM');
+let mainH1 = addH1(body, 'Exercise 5.2 - JavaScript DOM');
 
 //item 02
 function addDiv(parentElement, classList) {
