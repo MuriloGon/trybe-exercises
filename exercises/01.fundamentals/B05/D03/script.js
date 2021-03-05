@@ -42,6 +42,9 @@ function addClassAtDays(array, className, selector) {
         if (array.includes(itemNum)) item.className += ` ${className}`;
     }
 }
-
 const holidays = [24, 25, 31]
 addClassAtDays(holidays, 'holiday', '#days > li');
+
+// item 03
+const fridays = [4, 11, 18, 25]
+addClassAtDays(fridays, 'friday', '#days > li');
