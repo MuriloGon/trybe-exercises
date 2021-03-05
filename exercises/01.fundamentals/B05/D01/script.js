@@ -57,3 +57,4 @@ function logAllPTagsText() {
 setTimeout(() => {
     logAllPTagsText();
 }, 3000);
+
