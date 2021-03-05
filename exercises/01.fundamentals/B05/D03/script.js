@@ -12,3 +12,23 @@ function createDaysOfTheWeek() {
 };
 
 createDaysOfTheWeek();
+
+// Write your code here
+/* Exercise 1*/
+// item 01
+function addDays(parentElement, array) {
+    let daysLen = array.length;
+
+    for (let i = 0; i < daysLen; i += 1) {
+        let li = document.createElement('li');
+        li.classList = 'day'
+        li.innerText = `${array[i]}`
+        parentElement.appendChild(li);
+    }
+}
+
+const tenDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
+    12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+let daysList = document.getElementById('days');
+
+addDays(daysList, tenDaysList);
