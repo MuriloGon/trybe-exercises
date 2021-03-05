@@ -32,3 +32,16 @@ const tenDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
 let daysList = document.getElementById('days');
 
 addDays(daysList, tenDaysList);
+
+// item 02
+function addClassAtDays(array, className, selector) {
+    let liItems = document.querySelectorAll(selector);
+
+    for (let item of liItems) {
+        let itemNum = parseInt(item.innerText);
+        if (array.includes(itemNum)) item.className += ` ${className}`;
+    }
+}
+
+const holidays = [24, 25, 31]
+addClassAtDays(holidays, 'holiday', '#days > li');
