@@ -109,3 +109,28 @@ function changeTextOnClick(element, selector, fridaysOriginalElements, customTex
 }
 const fridayElements = [...document.getElementsByClassName('friday')].map(v => parseInt(v.innerText));
 changeTextOnClick(btnFriday, '.friday', fridayElements, 'FRIDAY');
+
+/* Exercise 06 */
+function zoomOut(evt) {
+    let zoomOutStyles = {
+        'fontSize': '',
+        'color': ''
+    }
+    if (evt.target.localName == 'li') {
+        for (let prop in zoomOutStyles) evt.target.style[prop] = zoomOutStyles[prop];
+    }
+}
+
+let zoomInStyles = {
+    'fontSize': '35px',
+    'color': 'red',
+    'cursor': 'pointer'
+}
+function zoomIn(evt) {
+    if (evt.target.localName == 'li') {
+        for (let prop in zoomInStyles) evt.target.style[prop] = zoomInStyles[prop]
+    };
+}
+daysList.addEventListener('mouseover', zoomIn, false)
+daysList.addEventListener('mouseout', zoomOut, false)
+
