@@ -40,7 +40,7 @@ let divRightContent = addDiv(divMainContent, 'right-content');
 function addImg(parentTag, src, className) {
     let imgElement = document.createElement('img');
     imgElement.src = src;
-    imgElement.className = className;
+    imgElement.classList.add(className);
     parentTag.appendChild(imgElement);
     return imgElement;
 }
