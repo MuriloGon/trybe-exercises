@@ -197,3 +197,40 @@ document.getElementById('days').addEventListener('click', (e) => {
     }
     if (e.target.localName == 'li') select(e, styleDaySelected);
 }, false);
+
+/* Bonus */
+let txtElement = document.getElementById('task-input');
+let btnElement = document.getElementById('btn-add');
+
+function addSubmitButtonEvents(textElement, buttonElement) {
+    var txt = ''
+
+    textElement.addEventListener('keyup', (e) => {
+        txt = e.target.value;
+        if (e.key === 'Enter') {
+            addListItem(txt, textElement);
+        }
+    })
+
+    buttonElement.addEventListener('click', () => {
+        addListItem(txt, textElement);
+    })
+}
+
+function addListItem(string, textElement) {
+    if (string === '') {
+        alert('Type something before submit the task!!')
+    } else {
+        let txtTask = textElement.value;
+        let liItem = document.createElement('li');
+        liItem.innerText = txtTask;
+
+        document.querySelector('.task-list').appendChild(liItem);
+
+        textElement.value = '';
+
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+}
+
+addSubmitButtonEvents(txtElement, btnElement);
