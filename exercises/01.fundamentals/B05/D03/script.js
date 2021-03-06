@@ -142,3 +142,11 @@ function addCustomSpanTask(parentElement, string) {
 }
 let tasksElement = document.querySelector('.my-tasks');
 addCustomSpanTask(tasksElement, "Nova Tarefa")
+
+/* Exercise 08 */
+function addCustomTask(parentElement) {
+    let div = document.createElement('div');
+    div.classList.add('task');
+    parentElement.appendChild(div)
+}
+addCustomTask(tasksElement)
