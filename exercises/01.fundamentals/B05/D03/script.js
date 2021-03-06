@@ -134,3 +134,11 @@ function zoomIn(evt) {
 daysList.addEventListener('mouseover', zoomIn, false)
 daysList.addEventListener('mouseout', zoomOut, false)
 
+/* Excercise 07 */
+function addCustomSpanTask(parentElement, string) {
+    let span = document.createElement('span');
+    span.innerText = string;
+    parentElement.appendChild(span);
+}
+let tasksElement = document.querySelector('.my-tasks');
+addCustomSpanTask(tasksElement, "Nova Tarefa")
