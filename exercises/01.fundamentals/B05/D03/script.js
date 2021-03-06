@@ -92,3 +92,20 @@ function addButton(parentElement, string) {
 }
 let btnFriday = addButton(containerButtons, 'Friday');
 btnFriday.id = 'btn-friday'
+
+/* Exercise 05 */
+function changeTextOnClick(element, selector, fridaysOriginalElements, customText) {
+    let fridays = document.querySelectorAll(selector);
+    let textLen = fridays.length;
+
+    element.addEventListener('click', () => {
+        for (let i = 0; i < textLen; i += 1) {
+            let currentText = fridays[i].innerText;
+
+            if (currentText !== customText) fridays[i].innerText = customText;
+            else fridays[i].innerText = fridaysOriginalElements[i];
+        }
+    })
+}
+const fridayElements = [...document.getElementsByClassName('friday')].map(v => parseInt(v.innerText));
+changeTextOnClick(btnFriday, '.friday', fridayElements, 'FRIDAY');
