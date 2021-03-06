@@ -150,3 +150,37 @@ function addCustomTask(parentElement) {
     parentElement.appendChild(div)
 }
 addCustomTask(tasksElement)
+
+/* Exercise 09 */
+function setStyles(element, styleObj) {
+    for (let style in styleObj) element.style[style] = styleObj[style];
+}
+
+function removeStyles(element, styleObj) {
+    for (let style in styleObj) element.style[style] = '';
+}
+
+function select(evt, style) {
+    let classList = evt.target.classList;
+    let stringClass = 'selected';
+    let isSelected = classList.value.includes(stringClass);
+
+    if (isSelected) {
+        evt.target.classList.remove(stringClass);
+        removeStyles(evt.target, style);
+    }
+    else {
+        evt.target.classList.add(stringClass);
+        setStyles(evt.target, style);
+    }
+}
+
+let styleTask = {
+    'backgroundColor': highlightColor,
+    'border': '5px dashed red',
+    'box-sizing': 'border-box'
+}
+
+document.querySelector('.task').addEventListener('click', (e) => {
+    select(e, styleTask);
+}, false);

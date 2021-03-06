@@ -154,3 +154,10 @@
     margin: 0px;
     padding: 10px 0;
   }
+
+  .task{
+    transition-delay: 0s;
+    transition-duration: 0.25s;
+    transition-property: width height;
+    transition-timing-function: ease-in-out
+  }
