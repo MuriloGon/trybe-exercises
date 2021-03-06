@@ -58,8 +58,8 @@ function addButton(parentElement, string) {
     parentElement.appendChild(btn)
     return btn;
 }
-let btnHolidayContainer = document.querySelector('div.buttons-container');
-let btnHoliday = addButton(btnHolidayContainer, 'Holidays')
+let containerButtons = document.querySelector('div.buttons-container');
+let btnHoliday = addButton(containerButtons, 'Holidays')
 
 
 /* Exercise 3*/
@@ -69,7 +69,7 @@ function changeColorDayOnClick(element, selector, defaultColor, HighlightColor) 
     element.addEventListener('click', () => {
         for (let holiday of holidays) {
             let currentBgColor = holiday.style['backgroundColor'];
-            
+
             if (currentBgColor === defaultColor || currentBgColor === '') {
                 holiday.style['backgroundColor'] = HighlightColor;
             }
@@ -82,3 +82,13 @@ function changeColorDayOnClick(element, selector, defaultColor, HighlightColor) 
 let defaultColor = 'rgb(238, 238, 238)';
 let highlightColor = 'rgb(150, 238, 150)';
 changeColorDayOnClick(btnHoliday, '.holiday', defaultColor, highlightColor);
+
+/* Exercice 04 */
+function addButton(parentElement, string) {
+    let btn = document.createElement('button');
+    btn.textContent = string;
+    parentElement.appendChild(btn)
+    return btn;
+}
+let btnFriday = addButton(containerButtons, 'Friday');
+btnFriday.id = 'btn-friday'
