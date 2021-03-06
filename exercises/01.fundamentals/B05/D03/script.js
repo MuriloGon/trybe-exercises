@@ -21,7 +21,7 @@ function addDays(parentElement, array) {
 
     for (let i = 0; i < daysLen; i += 1) {
         let li = document.createElement('li');
-        li.classList = 'day'
+        li.classList.add('day');
         li.innerText = `${array[i]}`
         parentElement.appendChild(li);
     }
@@ -42,11 +42,11 @@ function addClassAtDays(array, className, selector) {
         if (array.includes(itemNum)) item.className += ` ${className}`;
     }
 }
-const holidays = [24, 25, 31]
+const holidays = [24, 25, 31];
 addClassAtDays(holidays, 'holiday', '#days > li');
 
 // item 03
-const fridays = [4, 11, 18, 25]
+const fridays = [4, 11, 18, 25];
 addClassAtDays(fridays, 'friday', '#days > li');
 
 
@@ -55,11 +55,11 @@ addClassAtDays(fridays, 'friday', '#days > li');
 function addButton(parentElement, string) {
     let btn = document.createElement('button');
     btn.textContent = string;
-    parentElement.appendChild(btn)
+    parentElement.appendChild(btn);
     return btn;
 }
 let containerButtons = document.querySelector('div.buttons-container');
-let btnHoliday = addButton(containerButtons, 'Holidays')
+let btnHoliday = addButton(containerButtons, 'Holidays');
 
 
 /* Exercise 3*/
@@ -87,11 +87,11 @@ changeColorDayOnClick(btnHoliday, '.holiday', defaultColor, highlightColor);
 function addButton(parentElement, string) {
     let btn = document.createElement('button');
     btn.textContent = string;
-    parentElement.appendChild(btn)
+    parentElement.appendChild(btn);
     return btn;
 }
 let btnFriday = addButton(containerButtons, 'Friday');
-btnFriday.id = 'btn-friday'
+btnFriday.id = 'btn-friday';
 
 /* Exercise 05 */
 function changeTextOnClick(element, selector, fridaysOriginalElements, customText) {
@@ -111,14 +111,13 @@ const fridayElements = [...document.getElementsByClassName('friday')].map(v => p
 changeTextOnClick(btnFriday, '.friday', fridayElements, 'FRIDAY');
 
 /* Exercise 06 */
-function zoomOut(evt) {
-    let zoomOutStyles = {
-        'fontSize': '',
-        'color': ''
-    }
-    if (evt.target.localName == 'li') {
-        for (let prop in zoomOutStyles) evt.target.style[prop] = zoomOutStyles[prop];
-    }
+function zoomOut(evt, styles) {
+    if (evt.target.localName == 'li')
+        for (let prop in styles) evt.target.style[prop] = '';
+}
+function zoomIn(evt, styles) {
+    if (evt.target.localName == 'li')
+        for (let prop in styles) evt.target.style[prop] = styles[prop];
 }
 
 let zoomInStyles = {
@@ -126,13 +125,8 @@ let zoomInStyles = {
     'color': 'red',
     'cursor': 'pointer'
 }
-function zoomIn(evt) {
-    if (evt.target.localName == 'li') {
-        for (let prop in zoomInStyles) evt.target.style[prop] = zoomInStyles[prop]
-    };
-}
-daysList.addEventListener('mouseover', zoomIn, false)
-daysList.addEventListener('mouseout', zoomOut, false)
+daysList.addEventListener('mouseover', (e) => { zoomIn(e, zoomInStyles) }, false)
+daysList.addEventListener('mouseout', (e) => { zoomOut(e, zoomInStyles) }, false)
 
 /* Excercise 07 */
 function addCustomSpanTask(parentElement, string) {
@@ -141,13 +135,13 @@ function addCustomSpanTask(parentElement, string) {
     parentElement.appendChild(span);
 }
 let tasksElement = document.querySelector('.my-tasks');
-addCustomSpanTask(tasksElement, "Nova Tarefa")
+addCustomSpanTask(tasksElement, "Nova Tarefa");
 
 /* Exercise 08 */
 function addCustomTask(parentElement) {
     let div = document.createElement('div');
     div.classList.add('task');
-    parentElement.appendChild(div)
+    parentElement.appendChild(div);
 }
 addCustomTask(tasksElement)
 
@@ -232,5 +226,4 @@ function addListItem(string, textElement) {
         window.scrollTo(0, document.body.scrollHeight);
     }
 }
-
 addSubmitButtonEvents(txtElement, btnElement);
