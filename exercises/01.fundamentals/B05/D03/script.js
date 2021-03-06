@@ -48,3 +48,15 @@ addClassAtDays(holidays, 'holiday', '#days > li');
 // item 03
 const fridays = [4, 11, 18, 25]
 addClassAtDays(fridays, 'friday', '#days > li');
+
+
+/* Exercise 2*/
+// item 01 and 1tem 02
+function addButton(parentElement, string) {
+    let btn = document.createElement('button');
+    btn.textContent = string;
+    parentElement.appendChild(btn)
+    return btn;
+}
+let btnHolidayContainer = document.querySelector('div.buttons-container');
+let btnHoliday = addButton(btnHolidayContainer, 'Holidays')
