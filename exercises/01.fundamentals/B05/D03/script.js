@@ -184,3 +184,16 @@ let styleTask = {
 document.querySelector('.task').addEventListener('click', (e) => {
     select(e, styleTask);
 }, false);
+
+/* Exercise 10 */
+document.getElementById('days').addEventListener('click', (e) => {
+    let color1 = `rgb(${Math.floor(Math.random() * 86 + 145)} ,${Math.floor(Math.random() * 86 + 145)} ,${Math.floor(Math.random() * 86 + 145)} )`
+    let color2 = `rgb(${Math.floor(Math.random() * 86 + 145)} ,${Math.floor(Math.random() * 86 + 145)} ,${Math.floor(Math.random() * 86 + 145)} )`
+    let styleDaySelected = {
+        'backgroundColor': color1,
+        'border': `2px dotted ${color2}`,
+        'box-sizing': 'border-box',
+        'color': 'white'
+    }
+    if (e.target.localName == 'li') select(e, styleDaySelected);
+}, false);
