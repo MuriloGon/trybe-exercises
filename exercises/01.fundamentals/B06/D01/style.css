@@ -1,0 +1,17 @@
+label {
+  display: inline-block;
+  width  : 75px;
+}
+
+label,
+input {
+  width: 100%;
+}
+
+[type='text']:focus {
+  outline: none;
+}
+
+.erro {
+  border: 2px solid red;
+}
