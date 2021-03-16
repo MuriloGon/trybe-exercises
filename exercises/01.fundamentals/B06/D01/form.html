@@ -2,14 +2,49 @@
 <html lang="en">
 
 <head>
-  <title>
-    </html></title>
+  <title>Exercise 6.1</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
+
+  <form>
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" required>
+
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email" maxlength="50" required>
+
+    <label for="cpf">CPF</label>
+    <input type="text" name="cpf" id="cpf" maxlength="11" required>
+
+    <label for="adress">Adress</label>
+    <input type="text" name="adress" id="adress" maxlength="200" required>
+
+    <label for="city">City</label>
+    <select name="city" id="city" required></select>
+
+    <label for="type">Type</label>
+    <input name="type" id="type" required>
+
+
+    <label for="resume">Resume</label>
+    <textarea name="resume" id="resume" cols="30" rows="10" maxlength="1000" required></textarea>
+
+    <label for="role">Role</label>
+    <textarea name="role" id="role" cols="30" rows="10" maxlength="1000" required></textarea>
+
+    <label for="roleDescription">Role De</label>scription
+    <textarea name="roleDescription" id="roleDescription" cols="30" rows="10" maxlength="1000"></textarea>
+
+    <label for="startDate">Start Date</label>
+    <input name="startDate" id="startDate" type="text" required='true'>
+
+
+    <button type="submit" id='submit'>Mandar</button>
+  </form>
 
   <script src="script.js"></script>
 </body>
