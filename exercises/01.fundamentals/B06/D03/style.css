@@ -1,3 +1,7 @@
+:root {
+  --max-width: 1024px
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,4 +20,32 @@
 .social-img {
   width: 25px;
   margin-left: 10px;
+}
+
+/* HEADER */
+.header{
+  background-color: #323433;
+  color: #E2E4D4;
+  width: 100%;
+  font-size: 0.7rem;
+}
+
+.header__navbar {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__signup {
+  color: #BDC0B1;
+  text-decoration: underline;
+  font-size: 16px;
+}
+
+/* MAIN */
+.main {
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
