@@ -50,7 +50,41 @@
   margin: 0 auto;
 }
 
+.main hr {
+  width: 200px;
+  margin: 1rem auto;
+}
+
 .main__paragraph {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   padding: 1.25rem;
+}
+
+.main__languages {
+  display: flex;
+  flex-flow: wrap column;
+  justify-content: center;
+  align-content: center;
+}
+
+.main__row > div > * {
+  padding: 0.5rem 0;
+  color: #858585;
+}
+
+.main__row > div {
+  background-color: rgb(243, 243, 243);
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  flex-flow: nowrap column;
+  align-items: center;
+}
+
+.main__row {
+  display: flex;
+  justify-content: center;
 }
