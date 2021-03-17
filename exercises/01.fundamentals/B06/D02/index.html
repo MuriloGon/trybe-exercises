@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="bulma.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <section class='container'>
+    <form>
+      <div class="field">
+      <label class='label' for="name">Name</label>
+        <div class='control'>
+          <input class='input' type="text" name="name" id="name" required>
+        </div>
+      </div>
+      
+      <div class="field">
+      <label class='label' for="email">Email</label>
+        <div class='control'>
+          <input class='input' type="text" name="email" id="email" maxlength="50" required>
+        </div>
+      </div>
+
+      
+      <div class="field">
+      <label class='label' for="cpf">CPF</label>
+        <div class='control'>
+          <input class='input' type="text" name="cpf" id="cpf" maxlength="11" required>
+        </div>
+      </div>
+
+      <div class="field">
+      <label class='label' for="adress">Adress</label>
+        <div class='control'>
+          <input class='input' type="text" name="adress" id="adress" maxlength="200" required>
+        </div>
+      </div>
+
+      <div class="control">
+      <label class='label' for="city">City</label>
+        <div class="select">
+          <select name="city" id="city" required></select>
+        </div>
+      </div>
+
+      <div class="field">
+      <label class='label' for="type">Type</label>
+        <div class='control'>
+          <input class='input' name="type" id="type" required>
+        </div>
+      </div>
+
+      <div class="field">
+      <label class='label' for="resume">Resume</label>
+        <textarea class='textarea' name="resume" id="resume" cols="30" rows="10" maxlength="1000" required></textarea>
+      </div>
+
+      <div class="field">
+      <label class='label' for="role">Role</label>
+        <textarea class='textarea' name="role" id="role" cols="30" rows="10" maxlength="1000" required></textarea>
+      </div>
+
+      
+      <div class="field">
+      <label class='label' for="roleDescription">Role Description</label>
+        <textarea class='textarea' name="roleDescription" id="roleDescription" cols="30" rows="10"
+          maxlength="1000"></textarea>
+      </div>
+
+      <div class="field">
+      <label class='label' for="startDate">Start Date</label>
+        <div class='control'>
+          <input class='input' name="startDate" id="startDate" type="text" required='true'>
+        </div>
+      </div>
+
+      <div class="control">
+        <button type="submit" class='button is-primary' id='submit'>Mandar</button>
+      </div>
+    </form>
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
