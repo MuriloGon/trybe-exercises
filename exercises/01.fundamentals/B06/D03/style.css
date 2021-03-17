@@ -88,3 +88,10 @@
   display: flex;
   justify-content: center;
 }
+
+/* FOOTER */
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
