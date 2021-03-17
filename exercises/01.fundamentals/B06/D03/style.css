@@ -49,3 +49,8 @@
   max-width: var(--max-width);
   margin: 0 auto;
 }
+
+.main__paragraph {
+  font-size: 1.5rem;
+  padding: 1.25rem;
+}
