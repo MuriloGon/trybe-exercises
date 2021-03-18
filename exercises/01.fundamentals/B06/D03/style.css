@@ -1,0 +1,97 @@
+:root {
+  --max-width: 1024px
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu';
+}
+
+.header-img {
+  width: 70px;
+}
+
+.gallery-img {
+  width: 150px;
+}
+
+.social-img {
+  width: 25px;
+  margin-left: 10px;
+}
+
+/* HEADER */
+.header{
+  background-color: #323433;
+  color: #E2E4D4;
+  width: 100%;
+  font-size: 0.7rem;
+}
+
+.header__navbar {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__signup {
+  color: #BDC0B1;
+  text-decoration: underline;
+  font-size: 16px;
+}
+
+/* MAIN */
+.main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.main hr {
+  width: 200px;
+  margin: 1rem auto;
+}
+
+.main__paragraph {
+  font-size: 1.25rem;
+  padding: 1.25rem;
+}
+
+.main__languages {
+  display: flex;
+  flex-flow: wrap column;
+  justify-content: center;
+  align-content: center;
+}
+
+.main__row > div > * {
+  padding: 0.5rem 0;
+  color: #858585;
+}
+
+.main__row > div {
+  background-color: rgb(243, 243, 243);
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  flex-flow: nowrap column;
+  align-items: center;
+}
+
+.main__row {
+  display: flex;
+  justify-content: center;
+}
+
+/* FOOTER */
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
