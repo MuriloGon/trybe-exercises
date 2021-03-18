@@ -6,6 +6,7 @@
 .movie-container {
   display: flex;
   flex-direction: column;
+  align-self: stretch;
 }
 
 .movie-container h2 {
@@ -34,6 +35,7 @@
   flex-direction: column;
   margin: 20px;
   flex: 0 1 350px;
+  align-self: center;
 }
 
 .aside-container h3, h4 {
