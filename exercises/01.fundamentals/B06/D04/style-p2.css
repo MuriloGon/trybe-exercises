@@ -4,7 +4,7 @@
 }
 
 .movie-container div {
-  flex: 0 1 16%;
+  flex: 1 1 16%;
 }
 
 .movie-container {
