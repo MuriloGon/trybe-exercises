@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu';
+}
+
+body {
+  background-color: rgb(247, 247, 247);
+}
+
+.header-container {
+  background-color: #5C687C;
+  display: flex;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-container {
+  display: flex;
+}
+
+.menu-container ul {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.menu-container li {
+  color: white;
+  font-weight: 500;
+  font-size: 1.3rem;
+  list-style: none;
+  margin-right: 10px;
+}
