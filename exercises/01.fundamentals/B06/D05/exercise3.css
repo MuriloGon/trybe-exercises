@@ -80,3 +80,19 @@
   padding   : 20px;
   height    : 1%;
 }
+
+@media only print {
+
+  #navigation,
+  #header,
+  #footer {
+    display: none;
+  }
+
+  #content,
+  #aside {
+    clear: unset;
+    float: unset;
+    width: unset;
+  }
+}
