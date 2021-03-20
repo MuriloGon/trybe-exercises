@@ -1,0 +1,146 @@
+:root {
+  --main-max-width: 1024px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {}
+
+header>nav,
+header>a {
+  align-self: stretch;
+}
+
+a {
+  text-decoration: none;
+  color          : unset;
+  padding-inline : 1rem;
+}
+
+a:hover {
+  border-radius   : 5px;
+  cursor          : pointer;
+  background-color: rgb(59, 59, 59);
+}
+
+header ul>a {
+  flex      : 0 1 auto;
+  align-self: stretch;
+
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+}
+
+header ul {
+  display        : flex;
+  margin         : 0;
+  height         : 100%;
+  list-style-type: none;
+  padding-left   : 0;
+  flex           : 1 0 auto;
+  justify-self   : flex-end;
+}
+
+header>a>p {
+  margin    : 0;
+  align-self: center;
+}
+
+header>a {
+  display   : flex;
+  padding   : 0 1rem;
+  font-size : 1.2rem;
+  margin    : 0;
+  align-self: stretch;
+}
+
+header {
+  display        : flex;
+  justify-content: space-between;
+  align-items    : center;
+  color          : white;
+  font-weight    : 800;
+  height         : 50px;
+}
+
+.centralize {
+  max-width: var(--main-max-width);
+  margin   : 0 auto;
+}
+
+.header {
+  width           : 100%;
+  background-color: rgb(70, 70, 70);
+}
+
+.container {
+  padding  : 0 1rem;
+  display  : flex;
+  flex-flow: wrap row;
+}
+
+.infos {
+  position  : sticky;
+  top       : 10px;
+  left      : 0px;
+  flex      : 10 1 calc(var(--main-max-width) * 0.3);
+  align-self: flex-start;
+}
+
+.main-content {
+  flex: 10 1 calc(var(--main-max-width) * 0.6);
+}
+
+.footer>* {
+  padding: 1rem;
+}
+
+.footer {
+  background-color: rgb(70, 70, 70);
+  color           : white;
+}
+
+@media only screen and (max-width: 550px) {
+  .infos {
+    position: static;
+  }
+
+  header {
+    flex-flow  : nowrap column;
+    align-items: center;
+    height     : auto;
+  }
+
+  header>a,
+  header ul {
+    justify-content: center;
+  }
+
+  header a {
+    padding: 0.5rem;
+  }
+}
+
+@media only screen and (min-width: 551px) and (max-width: 950px) {
+  .infos {
+    position        : static;
+    display         : flex;
+  }
+
+  .aside-one {
+    flex: 1 0 50%;
+  }
+
+  .aside-two {
+    flex: 1 1 50%;
+  }
+}
