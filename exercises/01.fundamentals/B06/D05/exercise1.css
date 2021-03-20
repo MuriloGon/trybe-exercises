@@ -1,11 +1,22 @@
+:root {
+    --max-width-body: 980px;
+    font-size       : 22px;
+}
+
 body {
-
+    margin          : 1rem auto;
+    padding         : 0 15px;
+    max-width       : var(--max-width-body);
+    background-color: rgb(255, 236, 253);
 }
+
 h1 {
-
+    font-size: 1.5rem;
 }
-h2 {
 
+h2 {
+    font-size: 1.25rem;
+    margin: 0;
 }
 
 img {
@@ -13,5 +24,65 @@ img {
 }
 
 figure {
-    margin: 0;
+    margin        : 1.25rem 0;
+    flex          : 1 0 100%;
+    display       : flex;
+    flex-flow     : nowrap column;
+    /* align-items: center; */
+}
+
+.cats {
+    display  : flex;
+    flex-flow: wrap row;
+}
+
+
+@media only screen and (max-width: 679px) {
+    :root {
+        font-size  : 1.5rem;
+        line-height: 1.5;
+    }
+
+    body {
+        background-color: rgb(196, 237, 100);
+    }
+
+    figure {
+        margin: 1.25rem 0;
+        flex  : 1 0 100%;
+    }
+}
+
+
+@media only screen and (min-width: 680px) and (max-width: 1200px) {
+    :root {
+        font-size  : 1.6rem;
+        line-height: 1.5;
+    }
+
+    body {
+        background-color: cornflowerblue;
+    }
+
+    figure {
+        margin: 1.25rem 0;
+        flex  : 1 0 50%;
+    }
+}
+
+
+@media only screen and (min-width: 1201px) {
+    :root {
+        font-size  : 1.5rem;
+        line-height: 2;
+    }
+
+    body {
+        background-color: coral;
+    }
+
+    figure {
+        margin: 1.25rem 0;
+        flex  : 1 0 33%;
+    }
 }
