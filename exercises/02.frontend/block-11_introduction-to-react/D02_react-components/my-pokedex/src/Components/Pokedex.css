@@ -1,0 +1,11 @@
+.pokedex {
+  display        : flex;
+  flex-flow      : wrap row;
+  justify-content: center;
+  margin         : auto;
+}
+
+.pokedex>h1 {
+  flex: 1 1 100%;
+  text-align: center;
+}

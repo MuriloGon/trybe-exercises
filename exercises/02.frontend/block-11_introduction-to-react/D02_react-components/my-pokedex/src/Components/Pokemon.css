@@ -1,0 +1,35 @@
+.pokemon__card {
+  display        : flex;
+  align-items    : center;
+  justify-content: space-evenly;
+  flex           : 1 1 300px;
+  margin         : 0.5rem;
+  padding-block: 0.5rem;
+
+  /* border: 1px solid black; */
+  border-radius: 0.5rem;
+  box-shadow   : 0 0 5px 0 rgba(0, 0, 0, 0.15);
+
+  user-select: none;
+
+  transition: box-shadow cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
+}
+
+.pokemon__card:hover {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.3);
+  cursor    : pointer;
+}
+
+.pokemon__info>p {
+  margin: 0.5em;
+}
+
+.pokemon__info {
+  display       : flex;
+  flex-direction: column;
+}
+
+.pokemon__img {
+  width : auto;
+  height: 100%;
+}
