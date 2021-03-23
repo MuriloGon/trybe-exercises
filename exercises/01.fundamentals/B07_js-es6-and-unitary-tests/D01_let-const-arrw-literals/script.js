@@ -19,7 +19,7 @@ const oddsAndEvens = [13, 3, 4, 10, 7, 2];
 
 function sortArray(arr) {
   let out = [...arr].sort((a, b) => a - b);
-  return `Os números ${out} se encontram ordenados de forma crescente!`
+  return `Os números ${out} se encontram ordenados de forma crescente!`;
 }
 
 console.log(sortArray(oddsAndEvens));
@@ -32,3 +32,18 @@ function factorial(n) {
 }
 
 console.log(factorial(4));
+
+//EX02
+function longestWord(text) {
+  const splitedText = text.split(' ').filter(x => x !== '');
+  let maxIndex = 0;
+
+  splitedText.forEach((_x, i) => {
+    const currentLen = splitedText[maxIndex].length;
+    const maxLen = splitedText[i].length;
+    if (currentLen <= maxLen) maxIndex = i;
+  })
+  return splitedText[maxIndex];
+}
+
+console.log(longestWord('Antônio foi no banheiro e não sabemos o que aconteceu'));
