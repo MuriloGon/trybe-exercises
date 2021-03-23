@@ -47,3 +47,17 @@ function longestWord(text) {
 }
 
 console.log(longestWord('Antônio foi no banheiro e não sabemos o que aconteceu'));
+
+//EX03
+function buttonClick(buttonSelector, labelSelector) {
+  const btn = document.querySelector(buttonSelector);
+  const heading = document.querySelector(labelSelector);
+  let clickCount = 0;
+  btn.addEventListener('click', () => {
+    clickCount += 1;
+    heading.innerText = `You've clicked: ${clickCount}times !!!!`;
+  });
+  return btn;
+}
+
+const a = buttonClick('#botao', '#clicks');
