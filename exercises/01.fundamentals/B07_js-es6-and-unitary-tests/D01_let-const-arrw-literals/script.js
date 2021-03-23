@@ -24,3 +24,11 @@ function sortArray(arr) {
 
 console.log(sortArray(oddsAndEvens));
 /* PART II */
+//EX01
+function factorial(n) {
+  let output = 1;
+  for (let x = Math.round(Math.abs(n)); x > 1; x -= 1) output *= x;
+  return output;
+}
+
+console.log(factorial(4));
