@@ -14,5 +14,13 @@ const testingScope = (escopo) => {
 
 testingScope(true);
 
+//EX02
+const oddsAndEvens = [13, 3, 4, 10, 7, 2];
 
+function sortArray(arr) {
+  let out = [...arr].sort((a, b) => a - b);
+  return `Os números ${out} se encontram ordenados de forma crescente!`
+}
+
+console.log(sortArray(oddsAndEvens));
 /* PART II */
