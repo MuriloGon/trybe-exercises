@@ -61,3 +61,25 @@ function buttonClick(buttonSelector, labelSelector) {
 }
 
 const a = buttonClick('#botao', '#clicks');
+
+//EX04
+const func1 = (str, char) => {
+  let output = str.split('');
+  output = output.map(x => x === 'x' ? char : x);
+  return output.join('');
+}
+
+const str1 = func1('Tryber x aqui!', 'Bebeto');
+console.log(str1);
+
+const skills = ['skill1', 'skill2'];
+
+const func2 = (string, skills) => {
+  let output = string;
+  skills.forEach(x => {
+    output += ` ${x}`;
+  });
+  return output
+}
+
+console.log(func2(func1('Tryber x aqui!', 'EU!!'), skills));
