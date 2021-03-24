@@ -32,3 +32,11 @@ const listKeys = (obj) => {
   return keys;
 }
 listKeys(lesson1);
+
+//ex3
+const objectSize = (obj) => {
+  const size = Object.keys(obj).length;
+  console.log('size: ', size)
+  return size;
+}
+objectSize(lesson1);
