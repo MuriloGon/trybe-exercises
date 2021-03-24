@@ -20,7 +20,15 @@ const lesson3 = {
 
 //ex1
 const addField = (obj, key, value) => {
-  Object.assign(obj, {[key]: value})
+  Object.assign(obj, { [key]: value })
   return obj;
 }
 console.log(addField(lesson2, 'turno', 'noite'));
+
+//ex2
+const listKeys = (obj) => {
+  const keys = Object.keys(obj);
+  keys.forEach((x, i) => console.log(i, x))
+  return keys;
+}
+listKeys(lesson1);
