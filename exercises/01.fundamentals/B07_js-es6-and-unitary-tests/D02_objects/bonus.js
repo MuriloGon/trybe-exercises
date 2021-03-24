@@ -32,7 +32,25 @@ function filterBy(object, key, value) {
 function countStudentsByDiscipline(obj, discipline) {
   const lessons_ = filterBy(obj, 'materia', discipline)
   let output = 0;
-  lessons_.forEach(lesson=> output += lesson.numeroEstudantes)
+  lessons_.forEach(lesson => output += lesson.numeroEstudantes)
   return output;
 }
 console.log(countStudentsByDiscipline(lessons, 'Matemática'))
+
+//ex2
+
+
+
+function createReport(obj, name) {
+  let reportObj = filterBy(obj, 'professor', name);
+  const output = {
+    'professor/professora': name,
+    aulas: [],
+    estudantes: 0
+  }
+  reportObj.forEach(x => output.aulas.push(x.materia));
+  reportObj.forEach(x => output.estudantes += x.numeroEstudantes);
+  return output;
+}
+
+console.log(createReport(lessons, 'Maria Clara'))
