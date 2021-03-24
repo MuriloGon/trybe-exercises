@@ -40,14 +40,59 @@ const customerInfo = (order) => {
   const orderName = order.order.delivery.deliveryPerson;
   const out = `Hello ${orderName}, delivery from: ${name}, Telephone: ${phoneNumber}, ${adress}`
   console.log(out)
-  return out
+  return out;
 }
 
 customerInfo(order);
 
-const orderModifier = (order) => {
-  // Adicione abaixo as informações necessárias.
-
+function calcSubItemPrice(subItem) {
+  return subItem.amount * subItem.price;
 }
 
-orderModifier(order);
+function calcItemPrice(item) {
+  const keys = Object.keys(item);
+  let subtotal = 0;
+  for (let subitem of keys) {
+    subtotal += calcSubItemPrice(item[subitem]);
+  };
+  return subtotal;
+}
+
+function calcTotalPrice(orderObject) {
+  let total = 0;
+  for (let key of Object.keys(orderObject)) {
+    if (key !== 'delivery') {
+      total += calcItemPrice(orderObject[key])
+    }
+  }
+
+  if (orderObject['delivery']['price'])
+    total += orderObject['delivery']['price'];
+
+  return total;
+}
+
+function getAllPizzaTypes(pizzaObject) {
+  return Object.keys(pizzaObject)
+}
+
+function getAllDrinks(drinksObject) {
+  let output = [];
+
+  for (let key of Object.keys(drinksObject)) {
+    output.push(`${drinksObject[key].type ? drinksObject[key].type : ''}`)
+  }
+  return output;
+}
+
+const orderModifier = (order) => {
+  const name = order.order.delivery.deliveryPerson;
+  const pizza = getAllPizzaTypes(order.order.pizza).join(', ');
+  const drinks = getAllDrinks(order.order.drinks).join(', ');
+  const totalPrice = calcTotalPrice(order.order);
+
+  return `Hello ${name}, the total price of ${pizza} and ${drinks} is ${totalPrice}`
+}
+
+const ex2 = orderModifier(order);
+console.log(ex2)
