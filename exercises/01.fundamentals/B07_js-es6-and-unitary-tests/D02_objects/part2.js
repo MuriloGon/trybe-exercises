@@ -40,3 +40,12 @@ const objectSize = (obj) => {
   return size;
 }
 objectSize(lesson1);
+
+
+//ex4
+const listEntries = (obj) => {
+  const entries = Object.entries(obj);
+  entries.forEach((x, i) => console.log(i, x))
+  return entries;
+}
+listEntries(lesson1);
