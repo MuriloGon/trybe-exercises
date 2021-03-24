@@ -17,3 +17,10 @@ const lesson3 = {
   professor: 'Maria Clara',
   turno: 'noite',
 };
+
+//ex1
+const addField = (obj, key, value) => {
+  Object.assign(obj, {[key]: value})
+  return obj;
+}
+console.log(addField(lesson2, 'turno', 'noite'));
