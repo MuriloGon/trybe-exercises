@@ -59,9 +59,9 @@ const allLesosns = Object.assign({}, {
 console.log(allLesosns);
 
 //ex6
-function totalStudents(obj){
+function totalStudents(obj) {
   let students = 0;
-  for(let key in obj) {
+  for (let key in obj) {
     students += obj[key]['numeroEstudantes']
   }
   return students;
@@ -69,8 +69,22 @@ function totalStudents(obj){
 console.log(totalStudents(allLesosns));
 
 //ex7
-function getValueByNumber(obj, pos){
+function getValueByNumber(obj, pos) {
   const keys = Object.keys(obj);
   return obj[keys[pos]];
 }
 console.log(getValueByNumber(lesson1, 0));
+
+//ex8
+function verifyPair(obj, key, value) {
+  const entries = Object.entries(obj);
+  let output = false;
+  entries.forEach(x => {
+    if(x.includes(key) && x.includes(value)) output = true;
+  })
+  return output;
+}
+console.log(verifyPair(lesson3, 'turno', 'noite'));
+// Output: true,
+console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
+// Output: false
