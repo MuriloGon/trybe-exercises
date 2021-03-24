@@ -68,3 +68,9 @@ function totalStudents(obj){
 }
 console.log(totalStudents(allLesosns));
 
+//ex7
+function getValueByNumber(obj, pos){
+  const keys = Object.keys(obj);
+  return obj[keys[pos]];
+}
+console.log(getValueByNumber(lesson1, 0));
