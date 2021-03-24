@@ -49,3 +49,11 @@ const listEntries = (obj) => {
   return entries;
 }
 listEntries(lesson1);
+
+//ex5
+const allLesosns = Object.assign({}, {
+  lesson1: lesson1,
+  lesson2: lesson2,
+  lesson3: lesson3
+})
+console.log(allLesosns);
