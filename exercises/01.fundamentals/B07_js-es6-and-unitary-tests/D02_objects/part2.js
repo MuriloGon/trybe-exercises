@@ -57,3 +57,14 @@ const allLesosns = Object.assign({}, {
   lesson3: lesson3
 })
 console.log(allLesosns);
+
+//ex6
+function totalStudents(obj){
+  let students = 0;
+  for(let key in obj) {
+    students += obj[key]['numeroEstudantes']
+  }
+  return students;
+}
+console.log(totalStudents(allLesosns));
+
