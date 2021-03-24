@@ -6,48 +6,69 @@ import Pokedex from './Pokedex';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.currentPokemon = this.currentPokemon.bind(this);
-    this.handleCurrentPokemon = this.handleCurrentPokemon.bind(this);
-    this.handleType = this.handleType.bind(this);
+
+    this.updateState = this.updateState.bind(this);
+    this.filteredPokemons = this.filteredPokemons.bind(this);
+    this.handleNextPokemon = this.handleNextPokemon.bind(this)
+
+    this.types = ['All', ...new Set(pokemons.map(x => x.type))].sort();
     this.state = {
-      currentIndex: 0,
-      currentType: '',
+      type: 'All',
+      pokemons: pokemons,
+      filtered: pokemons,
+      length: pokemons.length,
+      currentIndex: 0
     };
-    this.types = [...new Set(pokemons.map(x => x.type))];
   }
 
-  currentPokemon(index) {
+  filteredPokemons(type) {
+    let filter = pokemons;
+    if (type !== 'All') filter = this.state.pokemons.filter(x => x.type === type);
 
-    return pokemons.filter((_x, i) => i === index);
+    const len = filter.length
+    let output = {
+      type: type,
+      filtered: filter,
+      length: len,
+      currentIndex: 0,
+    }
+    return output;
   }
 
-  handleCurrentPokemon() {
-    this.setState((last, _i) => {
-      const maxLen = pokemons.length;
-      const lastIndex = last.currentIndex
-      if (lastIndex < maxLen - 1) return { currentIndex: lastIndex + 1 };
-      else return { currentIndex: 0 };
-    });
+  updateState(type) {
+    this.setState(this.filteredPokemons(type));
   }
 
-  handleType(text) {
-    this.setState({ currentType: text })
+  handleNextPokemon() {
+    const index = this.state.currentIndex;
+    const len = this.state.length
+    if (index < len - 1) this.setState((a, b) => {
+      return { currentIndex: a.currentIndex + 1 }
+    }); else this.setState({ currentIndex: 0 });
   }
 
   render() {
+    let pokemon = this.state.filtered[this.state.currentIndex]
     return (
       <div className="App">
         <h1> Pokedex </h1>
-        <Pokedex pokemons={this.currentPokemon(this.state.currentIndex)} />
         <div>
-          <h3>{this.state.currentType === '' ? 'All' : this.state.currentType}</h3>
+          <h3>{this.state.type}</h3>
+          <h4>
+            Quantidade Máxima: ({this.state.currentIndex + 1}/{this.state.length})
+          </h4>
+
+          <Pokedex pokemon={pokemon} />
+
           {this.types.map(x =>
           (
-            <button key={x} onClick={() => { this.handleType(x) }}>{x}</button>
+            <button key={x} onClick={() => { this.updateState(x) }}>{x}</button>
           ))
           }
+
         </div>
-        <button onClick={this.handleCurrentPokemon}>Next Pokemon</button>
+        <button disabled={this.state.length <= 1 ? true : false}
+          onClick={this.handleNextPokemon}>Next Pokemon</button>
       </div>
     );
   }
