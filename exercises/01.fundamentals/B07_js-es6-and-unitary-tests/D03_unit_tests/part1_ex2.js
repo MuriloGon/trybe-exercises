@@ -9,4 +9,17 @@ function myRemove(arr, item) {
   }
   return newArr;
 }
-// implement the tests here
+//ex2.a
+assert.deepStrictEqual(myRemove([1, 2, 3, 4], 3), [1, 2, 4]);
+
+//ex2.b
+assert.notDeepStrictEqual(myRemove([1, 2, 3, 4], 3), [1, 2, 3, 4]);
+
+//ex2.c
+const a = [1, 2, 3, 4];
+const b = [...a];
+myRemove(a, 3);
+assert.deepStrictEqual(a, b);
+
+//ex2.d
+assert.deepStrictEqual(myRemove([1, 2, 3, 4], 5), [1, 2, 3, 4]);

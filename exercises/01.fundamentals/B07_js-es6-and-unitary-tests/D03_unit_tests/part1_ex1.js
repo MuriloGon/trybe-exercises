@@ -7,7 +7,11 @@ function sum(a, b) {
 
   return a + b;
 }
-
+//ex1.a
 assert.strictEqual(sum(4, 5), 9);
+
+//ex1.b
 assert.strictEqual(sum(0, 0), 0);
+
+//ex1.c
 assert.strictEqual(sum(4,"5"), 9);
