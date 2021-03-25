@@ -1,6 +1,5 @@
 const assert = require('assert');
 
-//ex1
 function sum(a, b) {
   if (typeof a !== 'number' || typeof b !== 'number') {
     throw new Error('parameters must be numbers');
@@ -9,4 +8,6 @@ function sum(a, b) {
   return a + b;
 }
 
-// implemente seus testes aqui
+assert.strictEqual(sum(4, 5), 9);
+assert.strictEqual(sum(0, 0), 0);
+assert.strictEqual(sum(4,"5"), 9);
