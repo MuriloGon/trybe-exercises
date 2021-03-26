@@ -1,5 +1,14 @@
 const assert = require('assert');
-// escreva a função factorial aqui
+
+const factorial = n => {
+  let output = 1
+  if (n <= 0) return output;
+
+  for (let i = 1; i <= n; i += 1) {
+    output *= i
+  }
+  return output;
+}
 
 const in1 = 5;
 const exp1 = 120;
