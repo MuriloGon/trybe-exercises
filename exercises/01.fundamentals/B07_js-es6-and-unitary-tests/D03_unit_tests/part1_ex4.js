@@ -7,4 +7,17 @@ function myFizzBuzz(num) {
   if (num % 5 === 0) return 'buzz';
   return num;
 }
-// implement the tests here
+
+assert.strictEqual(typeof (myFizzBuzz), 'function');
+
+//ex4.a
+assert.deepStrictEqual(myFizzBuzz(15), 'fizzbuzz');
+
+//ex4.b
+assert.deepStrictEqual(myFizzBuzz(3), 'fizz');
+
+//ex4.c
+assert.deepStrictEqual(myFizzBuzz(5), 'buzz');
+
+//ex4.d
+assert.deepStrictEqual(myFizzBuzz(2), 2);
