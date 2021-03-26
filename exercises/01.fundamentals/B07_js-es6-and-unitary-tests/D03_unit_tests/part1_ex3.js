@@ -11,4 +11,19 @@ function myRemoveWithoutCopy(arr, item) {
 
   return arr;
 }
-// implement the tests here
+
+assert.strictEqual(typeof (myRemoveWithoutCopy), 'function')
+
+//ex3.a
+assert.deepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4], 3), [1, 2, 4]);
+
+//ex3.b
+assert.notDeepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4], 3), [1, 2, 3, 4]);
+
+//ex3.c
+const a = [1, 2, 3, 4];
+const b = [...myRemoveWithoutCopy(a, 1)];
+assert.deepStrictEqual(a, b)
+
+//ex3.d
+assert.deepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4], 4), [1, 2, 3])
