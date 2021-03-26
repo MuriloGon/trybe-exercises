@@ -15,3 +15,11 @@ const obj3 = {
   description: 'My Description',
 };
 // implement the tests here
+
+assert.strictEqual(typeof (obj1), 'object');
+assert.strictEqual(typeof (obj2), 'object');
+assert.strictEqual(typeof (obj3), 'object');
+
+//ex5
+assert.deepStrictEqual(obj1, obj2)
+assert.notDeepStrictEqual(obj2, obj3)
