@@ -4,11 +4,21 @@ function getChange(payable, paid) {
   const { length } = coins;
   let remaining = paid - payable;
 
-  // escreva seu código aqui...
+  if (remaining < 0) throw Error('paid value is not enough');
+
+  let i = 0;
+  while (i < length) {
+    if (remaining / coins[i] >= 1) {
+      change.push(coins[i]);
+      remaining -= coins[i];
+      continue;
+    }
+    i += 1;
+  }
 
   return change;
 }
-
+// console.log(getChange(486, 600))
 
 const assert = require('assert');
 
