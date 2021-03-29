@@ -43,3 +43,25 @@ const qstAns = (correctAns) => {
 const check1 = qstAns('Gabarito')('Teste');
 const check2 = qstAns('higher order function')('HIGHER ORDER FUNCTION')
 console.log(check1, check2);
+
+// ex04
+const checkAns = (correctAns, usrAns) => {
+  const len = correctAns.length;
+  let rght = 0;
+  for (let i = 0; i < len; i += 1) {
+    if (usrAns[i] === 'N.A') {
+      rght += 0;
+    } else if (usrAns[i] === correctAns[i]) {
+      rght += 1;
+    } else rght -= 0.5;
+  }
+  return rght;
+}
+
+const countCorrectAns = (correctAnsArr, checkAnsFunc) => {
+  return (userAnsArr)=>checkAnsFunc(correctAnsArr, userAnsArr)
+}
+const rightAnswers =   ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
+const studentAnswers = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
+const checkAnsCurring = countCorrectAns(rightAnswers, checkAns)
+console.log(checkAnsCurring(studentAnswers))
