@@ -29,7 +29,7 @@ const damageCausedByRaw = (battleObj, battleObjFunc) => {
   return (key) => battleObjFunc[key](battleObj[key]);
 }
 const damagaCausedBy = damageCausedByRaw(battleMembers, dmgFuncs);
-console.log('damage dragon', damagaCausedBy('dragon'))
+console.log('damage dragon', damagaCausedBy('dragon'));
 
 // ex02
 dmgFuncs['warrior'] = (obj) => {
@@ -37,4 +37,25 @@ dmgFuncs['warrior'] = (obj) => {
     Math.random() * (obj['weaponDmg'] * obj['strength'] - obj['strength']) + obj['strength']
   );
 };
-console.log('damage warrior', damagaCausedBy('warrior'))
+console.log('damage warrior', damagaCausedBy('warrior'));
+
+// ex03
+dmgFuncs['mage'] = (obj) => {
+  if (obj['mana'] <= 15) {
+    console.log('Não possui mana suficiente');
+    return 0;
+  } else {
+    obj['mana'] -= 15;
+    return Math.round(Math.random() * (obj['intelligence'] * 2) + obj['intelligence']);
+  }
+};
+console.log('===============================================================')
+console.log('damage mage', battleMembers['mage'].mana, damagaCausedBy('mage'));
+console.log('damage mage', battleMembers['mage'].mana, damagaCausedBy('mage'));
+console.log('damage mage', battleMembers['mage'].mana, damagaCausedBy('mage'));
+console.log('damage mage', battleMembers['mage'].mana, damagaCausedBy('mage'));
+console.log('damage mage', battleMembers['mage'].mana, damagaCausedBy('mage'));
+console.log('damage mage', battleMembers['mage'].mana, damagaCausedBy('mage'));
+console.log('damage mage', battleMembers['mage'].mana, damagaCausedBy('mage'));
+console.log('damage mage', battleMembers['mage'].mana, damagaCausedBy('mage'));
+console.log('damage mage', battleMembers['mage'].mana, damagaCausedBy('mage'));
