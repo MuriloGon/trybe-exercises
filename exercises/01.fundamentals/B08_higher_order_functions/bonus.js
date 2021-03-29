@@ -29,3 +29,12 @@ const damageCausedByRaw = (battleObj, battleObjFunc) => {
   return (key) => battleObjFunc[key](battleObj[key]);
 }
 const damagaCausedBy = damageCausedByRaw(battleMembers, dmgFuncs);
+console.log('damage dragon', damagaCausedBy('dragon'))
+
+// ex02
+dmgFuncs['warrior'] = (obj) => {
+  return Math.round(
+    Math.random() * (obj['weaponDmg'] * obj['strength'] - obj['strength']) + obj['strength']
+  );
+};
+console.log('damage warrior', damagaCausedBy('warrior'))
