@@ -13,3 +13,21 @@ const newEmployees = () => {
   return employees;
 };
 console.log(newEmployees());
+
+// ex02
+const checkNumber = (num1, num2) => {
+  if (num1 === num2) return true;
+  return false;
+}
+
+const drawNumber = (num, checkFunc) => {
+  const numDrawn = Math.ceil(Math.random() * 5);
+  if(checkFunc(num, numDrawn)) return 'Parabéns você ganhou';
+  return 'Tente novamente';
+}
+console.log(drawNumber(1, checkNumber));
+console.log(drawNumber(2, checkNumber));
+console.log(drawNumber(3, checkNumber));
+console.log(drawNumber(4, checkNumber));
+console.log(drawNumber(5, checkNumber));
+
