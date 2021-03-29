@@ -22,7 +22,7 @@ const checkNumber = (num1, num2) => {
 
 const drawNumber = (num, checkFunc) => {
   const numDrawn = Math.ceil(Math.random() * 5);
-  if(checkFunc(num, numDrawn)) return 'Parabéns você ganhou';
+  if (checkFunc(num, numDrawn)) return 'Parabéns você ganhou';
   return 'Tente novamente';
 }
 console.log(drawNumber(1, checkNumber));
@@ -31,3 +31,15 @@ console.log(drawNumber(3, checkNumber));
 console.log(drawNumber(4, checkNumber));
 console.log(drawNumber(5, checkNumber));
 
+// ex03
+const qstAns = (correctAns) => {
+  return (userAns) => {
+    const correct = correctAns.toLowerCase()
+    const user = userAns.toLowerCase()
+    if (correct === user) return true;
+    else return false;
+  }
+}
+const check1 = qstAns('Gabarito')('Teste');
+const check2 = qstAns('higher order function')('HIGHER ORDER FUNCTION')
+console.log(check1, check2);
