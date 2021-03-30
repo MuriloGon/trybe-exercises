@@ -66,7 +66,11 @@ const books = [
 const expectedResult = false;
 
 function everyoneWasBornOnSecXX() {
-  // escreva seu código aqui
+  let ans = true;
+  const isXX = books.map(book =>
+    (book.author.birthYear < 2001 && book.author.birthYear >= 1901) ? true : false)
+  isXX.forEach(x => { ans = x && ans})
+  return ans;
 }
 
 assert.strictEqual(everyoneWasBornOnSecXX(), expectedResult);
