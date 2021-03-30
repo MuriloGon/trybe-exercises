@@ -66,7 +66,11 @@ const books = [
 const expectedResult = true;
 
 function someBookWasReleaseOnThe80s() {
-  // escreva seu código aqui
+  let ans = false;
+  const is80 = books.map(book =>
+    (book.releaseYear >= 1980 && book.releaseYear < 1990) ? true : false)
+  is80.forEach(x => { ans = x || ans })
+  return ans;
 }
 
 assert.strictEqual(someBookWasReleaseOnThe80s(), expectedResult);
