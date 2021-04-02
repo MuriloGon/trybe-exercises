@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import DogCard from './DogCard';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    dogKey: false
+  }
+
+  newDog = () => {
+    this.setState((st) => ({ dogKey: !st.dogKey }))
+  }
+
+  render() {
+    return (
+      <div className='container'>
+        <div className='card'>
+          <div className='newDog'>
+            <button onClick={this.newDog}>New Dog</button>
+          </div>
+          <DogCard key={Number(this.state.dogKey)} />
+        </div>
+      </div>
+    )
+  }
 }
 
 export default App;
