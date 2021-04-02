@@ -1,0 +1,14 @@
+.DogCard > * {
+  padding: 1rem 0 0 0;
+  margin: 0;
+  min-width: 400px;
+}
+
+.DogCard {
+  max-width : 400px;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.DogCard img {
+  width: 100%;
+}
