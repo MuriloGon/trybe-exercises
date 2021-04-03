@@ -9,8 +9,9 @@ class App extends Component {
       <BrowserRouter>
         <nav>
           <Link to='/'><li>Home</li></Link>
-          <Link to='/users'><li>Users</li></Link>
           <Link to='/about'><li>About</li></Link>
+          <Link to='/users'><li>Users</li></Link>
+          <Link to='/strict-access'><li>Strict Access</li></Link>
         </nav>
 
         <Switch>
