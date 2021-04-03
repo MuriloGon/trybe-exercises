@@ -14,9 +14,19 @@ class App extends Component {
         </nav>
 
         <Switch>
-          <Route path='/users'> <Users greetingMessage='Good Morning'/> </Route>
-          <Route path='/about'> <About /> </Route>
-          <Route path='/'> <Home /> </Route>
+
+          <Route path='/users/:id'>
+            <Users greetingMessage='Good Morning' />
+          </Route>
+
+          <Route path='/about'>
+            <About />
+          </Route>
+
+          <Route path='/'>
+            <Home />
+          </Route>
+
         </Switch>
       </BrowserRouter>
     );
