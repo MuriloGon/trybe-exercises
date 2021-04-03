@@ -1,14 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Users extends Component {
-  render() {
-    return (
-      <div>
-        <h2>Users</h2>
-        <p> My awesome Users component </p>
-      </div>
-    );
-  }
-};
+const Users = ({ greetingMessage = 'Hi There' }) => (
+  <div>
+    <h2> Users </h2>
+    <p> {greetingMessage}, this is my awesome Users component </p>
+  </div>
+);
 
 export default Users;
