@@ -14,7 +14,7 @@ class App extends Component {
         </nav>
 
         <Switch>
-          <Route path='/users'> <Users /> </Route>
+          <Route path='/users'> <Users greetingMessage='Good Morning'/> </Route>
           <Route path='/about'> <About /> </Route>
           <Route path='/'> <Home /> </Route>
         </Switch>
