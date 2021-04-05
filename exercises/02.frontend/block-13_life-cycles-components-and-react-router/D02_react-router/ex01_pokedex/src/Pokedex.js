@@ -38,11 +38,12 @@ class Pokedex extends React.Component {
     const filteredPokemons = this.fetchFilteredPokemons();
     const pokemonTypes = this.fetchPokemonTypes();
     const pokemon = filteredPokemons[this.state.pokemonIndex];
+    const isFavorite = this.props.favorites.includes(pokemon.id);
 
     return (
       <div className="pokedex">
         <h2> Pokedex </h2>
-        <Pokemon pokemon={pokemon} />
+        <Pokemon pokemon={pokemon} isFavorite={isFavorite} />
         <div className="pokedex-buttons-panel">
           <Button
             onClick={() => this.filterPokemons('all')}

@@ -7,41 +7,62 @@ import { PokemonDetails } from './PokemonDetails';
 import { About } from './About';
 import { NotFound } from './NotFound';
 
-function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <div className='main-nav'>
-          <nav>
-            <Link to='/'><li>Pokedex</li></Link>
-            <Link to='/about'><li>Sobre</li></Link>
-          </nav>
-        </div>
-        <Switch>
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      favoritePokemons: []
+    }
+  }
 
-          <Route exact path='/'
-            render={() => <Pokedex pokemons={pokemons} />} />
+  setFavorite = (arr) => {
+    this.setState({ favoritePokemons: arr })
+  }
 
-          <Route path='/about'
-            render={() => <About />} />
+  render() {
+    const { favoritePokemons } = this.state;
+    return (
+      <div className="App">
+        <BrowserRouter>
+          <div className='main-nav'>
+            <nav>
+              <Link to='/'><li>Pokedex</li></Link>
+              <Link to='/about'><li>Sobre</li></Link>
+            </nav>
+          </div>
+          <Switch>
 
-          <Route path='/pokemons/:pokemonId(\d{1,})'
-            render={props => {
-              const id = Number(props.match.params['pokemonId']);
-              const thereIsId = pokemons.some(pok => pok.id === id);
+            <Route exact path='/'
+              render={() => (
+                <Pokedex favorites={favoritePokemons} pokemons={pokemons} />
+              )}
+            />
 
-              if (!thereIsId) return <Redirect to='/404' />
-              return <PokemonDetails {...props} pokemons={pokemons} />
-            }} />
+            <Route path='/about'
+              render={() => <About />} />
 
-          <Route path='/404' render={() => <NotFound />} />
+            <Route path='/pokemons/:pokemonId(\d{1,})'
+              render={props => {
+                const id = Number(props.match.params['pokemonId']);
+                const thereIsId = pokemons.some(pok => pok.id === id);
 
-          <Route path='*'
-            render={() => <Redirect to='/404' />} />
-        </Switch>
-      </BrowserRouter>
-    </div>
-  );
+                if (!thereIsId) return <Redirect to='/404' />
+                return <PokemonDetails
+                  {...props}
+                  changeFavorite={this.setFavorite}
+                  favorites={favoritePokemons}
+                  pokemons={pokemons} />
+              }} />
+
+            <Route path='/404' render={() => <NotFound />} />
+
+            <Route path='*'
+              render={() => <Redirect to='/404' />} />
+          </Switch>
+        </BrowserRouter>
+      </div>
+    );
+  }
 }
 
 export default App;

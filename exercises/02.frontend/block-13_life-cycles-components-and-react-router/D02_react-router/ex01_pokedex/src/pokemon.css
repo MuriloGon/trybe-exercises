@@ -7,4 +7,13 @@
   margin: 10px 10px;
   border: 1px gray solid;
   border-radius: 10px;
+  position: relative;
+}
+
+.favorite{
+  position: absolute;
+  top: 0%;
+  left: 100%;
+  transform: translateX(-125%) translateY(10%);
+  font-size: 1.5rem;
 }
