@@ -19,7 +19,7 @@ export class PokemonDetails extends React.Component {
           const newArray = this.props.favorites;
           this.props.changeFavorite([...newArray, ...[Number(pokemonId)]])
         } else {
-          const rmvFavorites = this.props.favorites.filter(x => x !== pokemonId);
+          const rmvFavorites = this.props.favorites.filter(x => x !== Number(pokemonId));
           this.props.changeFavorite(rmvFavorites)
         }
       });

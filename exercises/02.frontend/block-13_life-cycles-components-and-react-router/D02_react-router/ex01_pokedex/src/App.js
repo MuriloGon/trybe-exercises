@@ -10,14 +10,25 @@ import { Favorites } from './Favorites';
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       favoritePokemons: []
     }
   }
 
+  componentDidMount() {
+    let favorites = localStorage.getItem('favorites')
+    if (favorites !== null) {
+      favorites = favorites.split(',').map(x => Number(x));
+      this.setState({ favoritePokemons: favorites })
+    }
+  }
+
   setFavorite = (arr) => {
-    this.setState({ favoritePokemons: arr })
+    this.setState({ favoritePokemons: arr }, () => {
+      localStorage.setItem('favorites', this.state.favoritePokemons);
+      console.log(localStorage)
+    });
   }
 
   render() {
@@ -45,8 +56,7 @@ class App extends React.Component {
 
             <Route path='/favorites'
               render={() => {
-                const filteredPokemons = pokemons.filter(pok => favoritePokemons.includes(pok.id))
-                console.log(filteredPokemons)
+                const filteredPokemons = pokemons.filter(pok => favoritePokemons.includes(pok.id));
                 return (<Favorites favoritePokemons={filteredPokemons} />)
               }}
             />
