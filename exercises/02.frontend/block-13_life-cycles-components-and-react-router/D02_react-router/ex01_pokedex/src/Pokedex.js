@@ -2,7 +2,6 @@ import React from 'react';
 import Pokemon from './Pokemon';
 import Button from './Button';
 import './pokedex.css';
-import { Link } from 'react-router-dom';
 
 class Pokedex extends React.Component {
   constructor(props) {
