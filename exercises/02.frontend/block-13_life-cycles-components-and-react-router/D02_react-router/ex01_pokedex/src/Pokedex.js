@@ -2,15 +2,16 @@ import React from 'react';
 import Pokemon from './Pokemon';
 import Button from './Button';
 import './pokedex.css';
+import { Link } from 'react-router-dom';
 
 class Pokedex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {pokemonIndex: 0, filteredType: 'all'};
+    this.state = { pokemonIndex: 0, filteredType: 'all' };
   }
 
   filterPokemons(filteredType) {
-    this.setState({filteredType, pokemonIndex: 0});
+    this.setState({ filteredType, pokemonIndex: 0 });
   }
 
   nextPokemon(numberOfPokemons) {
@@ -20,8 +21,8 @@ class Pokedex extends React.Component {
   }
 
   fetchFilteredPokemons() {
-    const {pokemons} = this.props;
-    const {filteredType} = this.state;
+    const { pokemons } = this.props;
+    const { filteredType } = this.state;
 
     return pokemons.filter(pokemon => {
       if (filteredType === 'all') return true;
@@ -30,9 +31,8 @@ class Pokedex extends React.Component {
   }
 
   fetchPokemonTypes() {
-    const {pokemons} = this.props;
-
-    return [...new Set(pokemons.reduce((types, {type}) => [...types, type], []))];
+    const { pokemons } = this.props;
+    return [...new Set(pokemons.reduce((types, { type }) => [...types, type], []))];
   }
 
   render() {
