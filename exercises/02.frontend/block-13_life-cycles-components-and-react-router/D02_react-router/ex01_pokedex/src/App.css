@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+}
+
+
+.main-nav a:hover {
+  background-color: black;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.main-nav li {
+  list-style: none;
+  padding: 0.5rem;
+}
+
+.main-nav ul {
+  padding: 0;
+}
+
+.main-nav nav {
+  max-width: 900px;
+  margin   : 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.main-nav {
+  width           : 100%;
+  background-color: rgb(80, 80, 80);
+}
