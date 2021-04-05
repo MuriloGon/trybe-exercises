@@ -3,13 +3,17 @@ import './App.css';
 import pokemons from './data';
 import Pokedex from './Pokedex';
 import { PokemonDetails } from './PokemonDetails';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <h1> Pokedex </h1>
       <BrowserRouter>
+        <div className='main-nav'>
+          <nav>
+            <Link to='/'><li>Pokedex</li></Link>
+          </nav>
+        </div>
         <Switch>
 
           <Route path='/pokemons/:pokemonId' render={props => <PokemonDetails {...props} pokemons={pokemons} />} />
