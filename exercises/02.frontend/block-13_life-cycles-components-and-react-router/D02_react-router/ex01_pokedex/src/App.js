@@ -2,9 +2,10 @@ import React from 'react';
 import './App.css';
 import pokemons from './data';
 import Pokedex from './Pokedex';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Link, Redirect } from 'react-router-dom';
 import { PokemonDetails } from './PokemonDetails';
 import { About } from './About';
+import { NotFound } from './NotFound';
 
 function App() {
   return (
@@ -17,11 +18,26 @@ function App() {
           </nav>
         </div>
         <Switch>
-          <Route path='/about' render={() => <About />} />
-          <Route path='/pokemons/:pokemonId' render={props => <PokemonDetails {...props} pokemons={pokemons} />} />
 
-          <Route path='/' render={() => <Pokedex pokemons={pokemons} />} />
+          <Route exact path='/'
+            render={() => <Pokedex pokemons={pokemons} />} />
 
+          <Route path='/about'
+            render={() => <About />} />
+
+          <Route path='/pokemons/:pokemonId(\d{1,})'
+            render={props => {
+              const id = Number(props.match.params['pokemonId']);
+              const thereIsId = pokemons.some(pok => pok.id === id);
+
+              if (!thereIsId) return <Redirect to='/404' />
+              return <PokemonDetails {...props} pokemons={pokemons} />
+            }} />
+
+          <Route path='/404' render={() => <NotFound />} />
+
+          <Route path='*'
+            render={() => <Redirect to='/404' />} />
         </Switch>
       </BrowserRouter>
     </div>
