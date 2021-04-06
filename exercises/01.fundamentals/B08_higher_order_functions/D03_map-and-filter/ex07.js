@@ -67,7 +67,7 @@ const expectedResult = 'O Senhor dos Anéis';
 
 function authorWith3DotsOnName() {
   return books
-    .find(book => /[a-z|A-Z]\. [a-z|A-Z]\. [a-z|A-Z]\./.test(book.author.name))
+    .find(book => /(\D\. ){3}/.test(book.author.name))
     .name
 }
 
