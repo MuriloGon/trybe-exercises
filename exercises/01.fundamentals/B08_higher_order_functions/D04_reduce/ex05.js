@@ -8,7 +8,14 @@ const names = [
 ];
 
 function containsA() {
-  // escreva seu código aqui
+  return names.reduce((acc, nxt) => {
+    let repeatedLetter = 0;
+    const letters = nxt.split('');
+    letters.forEach(letter=>{
+      if(letter.toLowerCase() === 'a') repeatedLetter += 1;
+    })
+    return acc + repeatedLetter;
+  }, 0)
 }
 
 assert.deepStrictEqual(containsA(), 20);
