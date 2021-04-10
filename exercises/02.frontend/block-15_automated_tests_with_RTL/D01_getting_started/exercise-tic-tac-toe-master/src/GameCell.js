@@ -9,11 +9,30 @@ import oImage from './o.svg';
 // Use-o para selecionar uma casa especifica nas horas dos testes.
 
 class GameCell extends React.Component {
+  state = {
+    mark: '',
+    wasMarked: false,
+  }
+
+  changeMark = () => {
+    const { currentPlayer } = this.props;
+    this.setState({ mark: currentPlayer, wasMarked: true }, () => {
+      this.props.changePlayer();
+    });
+  }
+
+  renderMark = (mark) => {
+    if (mark === 'X') return <img src={xImage} alt="X mark" />;
+    if (mark === 'O') return <img src={oImage} alt="O mark" />;
+    return "Erro";
+  }
+
   render() {
     const { id } = this.props;
-    const st = {backgroundImage: `url(./x.png)`}
+    const { mark, wasMarked } = this.state;
     return (
-      <div data-testid={`cell_${id}`} className="game-cell"  >
+      <div onClick={wasMarked ? null : this.changeMark} data-testid={`cell_${id}`} className="game-cell"  >
+        {mark !== '' ? this.renderMark(mark) : null}
       </div>
     );
   }

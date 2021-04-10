@@ -5,10 +5,11 @@ import './GameBoard.css';
 
 class GameBoard extends React.Component {
   render() {
+    const { currentPlayer } = this.props;
     return (
       <div className="game-board">
         {this.props.gameState.map((playerId, i) => (
-          <GameCell key={i} id={i} />
+          <GameCell changePlayer={this.props.changePlayer} currentPlayer={ currentPlayer } key={i} id={i} />
         ))}
       </div>
     );
