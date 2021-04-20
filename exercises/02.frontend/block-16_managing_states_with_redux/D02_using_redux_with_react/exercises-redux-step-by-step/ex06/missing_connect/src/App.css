@@ -1,0 +1,46 @@
+.divGif {
+  border: 2px solid black;
+  border-radius: 15px;
+}
+
+.firstImg {
+  position: relative;
+  animation: firstMario 15s 1;
+  animation-direction: normal;
+}
+
+@keyframes firstMario {
+  0%   {left: 0px; top: 0px;}
+  100%  {left: 40vw; top: 0px;}
+}
+
+.mario-background {
+  background-color: deepskyblue;
+  background: linear-gradient(0deg, rgb(1, 21, 32) 0%, deepskyblue 95%);
+  height: 100vh;
+  justify-content: space-evenly;
+  padding: 2% !important;
+  width: 100vw;
+}
+
+.rescue {
+  width: 100vw !important;
+}
+
+.success {
+  width: 100vw !important;
+}
+
+.love {
+  animation: spin infinite 4s linear;
+  animation-direction: alternate;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(15deg);
+  }
+}

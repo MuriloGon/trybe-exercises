@@ -1,0 +1,61 @@
+.App {
+  text-align: center;
+}
+
+img {
+  border: 2px solid black;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  margin-top: 15px;
+}
+
+.form-mutant {
+  height: 90vh !important;
+  width: 75vw !important;
+}
+
+h2 {
+  margin-bottom: 30px !important;
+}
+
+.intro {
+  color: white;
+  font-size: large;
+  font-weight: 500;
+  margin-top: 20px !important;
+  margin-bottom: 0px !important;
+  text-align: center;
+}
+
+.mutant-card {
+  border-radius: 15px;
+  height: 100%;
+  margin: auto;
+  padding: 50px;
+  width: 75%;
+}
+
+.mutant-input {
+  background-color: black;
+  border-radius: 15px;
+  margin: auto;
+  opacity: 0.95;
+  padding: 20px;
+  width: 70%;
+}
+
+.omega-div {
+  height: 80%;
+  width: 100%;
+}
+
+.omega-background {
+  align-items: center;
+  background-image: url('imgs/wallpaper.jpg');
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  opacity: 0.9;
+}

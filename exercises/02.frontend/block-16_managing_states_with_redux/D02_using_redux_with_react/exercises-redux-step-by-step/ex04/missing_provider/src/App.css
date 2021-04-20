@@ -1,0 +1,108 @@
+.seiya-background {
+  align-items: center;
+  background-image: url('imgs/wallpaper.jpg');
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+}
+
+.help {
+  width: 100vw;
+}
+
+h1 {
+  color: white;
+}
+
+img {
+  border-radius: 15px;
+}
+
+.important {
+  color: white;
+  font-size: xx-large;
+  font-weight: 700;
+  width: 70vw;
+}
+
+p {
+  color: black;
+  font-size: large;
+  font-weight: 700;
+  text-align: center;
+  width: 60%;
+}
+
+span {
+  color: blueviolet;
+  font-size: xx-large;
+  font-weight: 700;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.rox {
+  background: white;
+  border-radius: 15px;
+  margin: 20px auto;
+  padding: 10px 0;
+  width: 30%;
+}
+
+iframe {
+  margin: 20px;
+}
+
+.right-box {
+  background: white;
+  border-radius: 15px;
+  padding: 10px;
+  width: 420px;
+  -webkit-transition: all 4s fadein;
+  -moz-transition: all 4s fadein;
+  -o-transition: all 4s fadein;
+  transition: all 4s fadein;
+  animation: fadein 4s;
+}
+
+.left-box {
+  background: white;
+  border-radius: 15px;
+  padding: 10px;
+  width: 420px;
+  -webkit-transition: all 4s fadein;
+  -moz-transition: all 4s fadein;
+  -o-transition: all 4s fadein;
+  transition: all 4s fadein;
+  animation: fadein 4s;
+}
+
+.left {
+  -webkit-transition: all 4s fadein;
+  -moz-transition: all 4s fadein;
+  -o-transition: all 4s fadein;
+  transition: all 4s fadein;
+  animation-delay: 2s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateX(40px) }
+  to   { opacity: 1; transform: translateX(0) }
+}
+
+@-moz-keyframes fadein {
+  from { opacity: 0; transform: translateX(40px) }
+  to   { opacity: 1; transform: translateX(0) }
+}
+
+@-webkit-keyframes fadein {
+  from { opacity: 0; transform: translateX(40px) }
+  to   { opacity: 1; transform: translateX(0) }
+}
+
+@-o-keyframes fadein {
+  from { opacity: 0; transform: translateX(40px) }
+  to   { opacity: 1; transform: translateX(0) }
+}

@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+}
+
+.matrix-background {
+  align-items: center;
+  background-image: url('imgs/wallpaper.png');
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  opacity: 0.9;
+}
+
+.matrix-main {
+  align-items: center;
+  background-color: black;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  opacity: 0.9;
+  padding: 15px;
+  width: 60%;
+}
+
+.pill {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}

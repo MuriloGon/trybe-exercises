@@ -1,0 +1,53 @@
+.abstract {
+  background-color: royalblue;
+  border-radius: 10px;
+  font-size: large;
+  padding: 20px;
+  width: 80%
+}
+
+.App {
+  text-align: center;
+}
+
+.dragonball-background {
+  align-items: center;
+  background-image: url("imgs/wallpaper.jpg");
+  background-size: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100vh;
+  opacity: 0.9;
+}
+
+.dragonball-main {
+  align-items: center;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  width: 60%;
+}
+
+img {
+  border:5px solid white;
+  border-radius: 10px;
+}
+
+.genkidama {
+  width: 550px;
+}
+
+.timer {
+  background-color: orangered;
+  border-radius: 10px;
+  color: white;
+  font-size: xx-large;
+  font-weight: 700;
+  margin-top: 18px;
+  padding: 10px;
+  text-align: center;
+  width: 300px;
+}
