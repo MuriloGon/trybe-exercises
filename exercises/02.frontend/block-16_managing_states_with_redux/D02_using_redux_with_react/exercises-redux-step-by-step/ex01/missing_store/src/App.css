@@ -1,0 +1,70 @@
+.App {
+  text-align: center;
+}
+
+.banzai {
+  font-size: xx-large;
+}
+
+.buttonFinal {
+  margin-top: 15px;
+}
+
+.garfield-background {
+  background-color: rgb(233, 115, 19);
+  background: linear-gradient(0deg, rgb(36, 13, 0) 0%, rgb(226, 130, 51) 95%);
+  min-height: 100%;
+  justify-content: space-evenly;
+  padding: 0 10px !important;
+  width: 100vw;
+}
+
+.garfield-main {
+  align-items: center;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  width: 60%;
+}
+
+.newForm {
+  background-color: black;
+  border-radius: 15px;
+  margin: 20px;
+  max-height: 100%;
+  min-height: 100vh;
+  opacity: 0.75;
+  padding: 20px;
+  min-width: 60%;
+}
+
+img {
+  border:5px solid white;
+  border-radius: 10px;
+}
+
+.newScore {
+  height: 100vh;
+  width: 40%;
+}
+
+.score {
+  height: 100vh;
+}
+
+span {
+  font-weight: 700;
+  margin-top: 30px;
+}
+
+p {
+  color: white;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.quiz {
+  height: 100vh;
+}
