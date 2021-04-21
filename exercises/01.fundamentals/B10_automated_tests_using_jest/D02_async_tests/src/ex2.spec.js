@@ -20,6 +20,7 @@ describe('EX2 - testins promisses', () => {
     const nameExpected = 'murilo';
     const errorObj = { error: `User with ${idTested} not found.` }
 
+    expect.assertions(1);
     return getUserName(idTested)
       .then((nameObj) => {
         expect(nameObj).toBe(nameExpected)
