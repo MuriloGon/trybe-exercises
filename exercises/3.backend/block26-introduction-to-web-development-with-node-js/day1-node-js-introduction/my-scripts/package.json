@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "imc": "node imc.js"
+    "imc": "node imc.js",
+    "velocidade": "node velocity.js"
   },
   "keywords": [],
   "author": "",
