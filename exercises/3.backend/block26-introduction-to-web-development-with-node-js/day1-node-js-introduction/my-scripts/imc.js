@@ -13,7 +13,11 @@ function computeIMC(height, weight) {
   return weight / height ** 2;
 }
 
-const height = questionFloat('Qual sua altura? (m):\t',)
-const weight = questionFloat('Qual seu peso? (kg):\t')
+function main() {
+  const height = questionFloat('Qual sua altura? (m):\t',)
+  const weight = questionFloat('Qual seu peso? (kg):\t')
+  
+  console.log('Seu IMC é: ', IMCMessages(computeIMC(height, weight)));
+}
 
-console.log('Seu IMC é: ', IMCMessages(computeIMC(height, weight)));
+module.exports = main;
