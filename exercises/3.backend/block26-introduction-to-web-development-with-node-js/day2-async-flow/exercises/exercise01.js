@@ -13,4 +13,5 @@ function nums(num1, num2, num3) {
 // nums(1, 22, 3).then( (data) => console.log('o resultado foi', data)).catch(e => console.error(e.message));
 // nums(1, '22', 3).then( (data) => console.log('o resultado foi', data)).catch(e => console.error(e.message));
 // nums(1, 22, 3).then( (data) => console.log('o resultado foi', data)).catch(e => console.error(e.message));
-export default nums;
+// export default nums;
+module.exports = nums;
