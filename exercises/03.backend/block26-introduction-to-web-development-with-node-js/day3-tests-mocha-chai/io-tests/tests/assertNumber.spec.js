@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const assertNumber = require('../assertNumber');
 
-describe('Exercises 01, 02, 03 - função', () => {
+describe('Exercises 01, 02, 03 - função assertNumber', () => {
   it('entrada deve ser um número', () => {
     expect(() => { assertNumber('1'); }).to.throw(/o valor deve ser um número/i);
     expect(() => { assertNumber('1'); }).to.not.throw(/Qualquer outra coisa/i);
