@@ -2,10 +2,12 @@ const express = require('express');
 const rescue = require('express-rescue');
 const bodyParser = require('body-parser');
 const router = require('./simpsons');
+const authMiddleware = require('./authMiddleware');
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use(authMiddleware);
 
 app.get('/ping', (_req, res) => {
   const message = 'pong';
