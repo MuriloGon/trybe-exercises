@@ -17,6 +17,14 @@ app.post('/hello', (req, res) => {
   res.status(200).json({ message: `Hello, ${name}` });
 });
 
+app.post('/greetings', (req, res) => {
+  const { name, age } = req.body;
+  if (name && age && !isNaN(age) && typeof name === 'string') {
+    if (age > 17) return res.status(200).json({ message: `Hello, ${name}!` });
+    else return res.status(401).json({ message: 'Unauthorized' });
+  } else return res.status(400).json({ message: 'Wrong parameter' });
+});
+
 app.listen(3000, () => {
   console.log('Running on port 3000 !!');
 });
