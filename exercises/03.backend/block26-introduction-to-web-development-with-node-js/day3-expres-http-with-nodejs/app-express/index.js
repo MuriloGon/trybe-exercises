@@ -5,9 +5,16 @@ const fs = require('fs/promises');
 
 const app = express();
 
-app.get('/ping', (req, res) => {
+app.use(bodyParser.json());
+
+app.get('/ping', (_req, res) => {
   const message = 'pong';
   res.status(200).json({ message });
+});
+
+app.post('/hello', (req, res) => {
+  const { name } = req.body;
+  res.status(200).json({ message: `Hello, ${name}` });
 });
 
 app.listen(3000, () => {
