@@ -1,7 +1,7 @@
 const express = require('express');
 const rescue = require('express-rescue');
 const bodyParser = require('body-parser');
-const fs = require('fs/promises');
+const router = require('./simpsons');
 
 const app = express();
 
@@ -35,6 +35,8 @@ app.put('/users/:name/:age', (req, res) => {
   }
   return res.status(400).json({ message: 'Wrong parameter' });
 });
+
+app.use('/simpsons', router);
 
 app.listen(3000, () => {
   console.log('Running on port 3000 !!');
