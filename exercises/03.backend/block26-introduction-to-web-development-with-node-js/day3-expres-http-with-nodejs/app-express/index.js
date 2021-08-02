@@ -25,6 +25,17 @@ app.post('/greetings', (req, res) => {
   } else return res.status(400).json({ message: 'Wrong parameter' });
 });
 
+app.put('/users/:name/:age', (req, res) => {
+  const { age, name } = req.params;
+  console.log(req.params);
+  if (name && age && !isNaN(age)) {
+    return res.status(200).json({
+      message: `Seu nome é ${name} e você tem ${age} anos de idade`
+    });
+  }
+  return res.status(400).json({ message: 'Wrong parameter' });
+});
+
 app.listen(3000, () => {
   console.log('Running on port 3000 !!');
 });
