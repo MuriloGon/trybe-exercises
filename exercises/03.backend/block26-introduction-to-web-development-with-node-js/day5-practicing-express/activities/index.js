@@ -6,3 +6,5 @@ const app = express();
 app.use('/login', login);
 
 app.listen(process.env.PORT);
+
+export default app;
