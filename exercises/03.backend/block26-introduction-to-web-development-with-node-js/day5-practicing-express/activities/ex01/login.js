@@ -8,7 +8,7 @@ const router = Router();
 
 router.use(json());
 
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
   if (!validateLoginReq(req)) {
     return res.status(400).json({message: 'email or password is incorrect'});
   }
