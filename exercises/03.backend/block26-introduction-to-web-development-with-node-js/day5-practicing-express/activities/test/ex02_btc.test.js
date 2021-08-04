@@ -31,7 +31,14 @@ describe('atividade 01 - Rota /btc/price', () => {
     await chai.request(app).post('/btc/price')
         .send({token: validToken}).then(validCB);
   });
-  // it('', () => {
-
-  // });
+  it('deve retornar {message: "invalid token"} quando'+
+    ' o token enviador estiver fora do padrão esperado', async () => {
+    await chai.request(app).post('/btc/price')
+        .send({token: invalidToken1}).then(({body})=> {
+          const {message} = body;
+          expect(message).to.exist;
+          expect(message).to.be.eqls('invalid token');
+          expect(message).to.not.be.eqls('valid token?');
+        });
+  });
 });
