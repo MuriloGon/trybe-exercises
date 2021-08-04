@@ -1,6 +1,8 @@
 import chai, {expect} from 'chai';
 import app from '../index.js';
 import chaiHttp from 'chai-http';
+import Sinon from 'sinon';
+import crypto from 'crypto';
 chai.use(chaiHttp);
 
 const reqObj = {
@@ -30,5 +32,25 @@ describe('atividade 01 - Rota /login', () => {
     await chai.request(app).get('/login').send(reqObj.inv4).then(badRes);
     await chai.request(app).get('/login').send(reqObj.inv5).then(badRes);
     await chai.request(app).get('/login').send(reqObj.val).then(okRes);
+  });
+  it('deve responder ao usuário validado com um token'+
+  ' de 12 caracteres criado aleatóriamente', async () => {
+    const token = '1234123412341234';
+    Sinon.stub(crypto, 'randomBytes').returns({
+      toString: () => token,
+    });
+    await chai.request(app).get('/login')
+        .send(reqObj.val)
+        .then(({body}) => {
+          expect(body).to.be.eql({token});
+        });
+
+    Sinon.restore();
+
+    await chai.request(app).get('/login')
+        .send(reqObj.val)
+        .then(({body}) => {
+          expect(body.token).to.have.length(12);
+        });
   });
 });
