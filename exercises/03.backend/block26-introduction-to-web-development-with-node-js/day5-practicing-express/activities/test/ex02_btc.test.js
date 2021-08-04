@@ -31,7 +31,7 @@ describe('atividade 01 - Rota /btc/price', () => {
     await chai.request(app).post('/btc/price')
         .send({token: validToken}).then(validCB);
   });
-  it('', () => {
+  // it('', () => {
 
-  });
+  // });
 });
