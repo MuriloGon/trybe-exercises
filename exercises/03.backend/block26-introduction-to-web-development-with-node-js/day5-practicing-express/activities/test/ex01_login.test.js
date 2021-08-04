@@ -2,7 +2,6 @@ import chai, {expect} from 'chai';
 import app from '../index.js';
 import chaiHttp from 'chai-http';
 import Sinon from 'sinon';
-import crypto from 'crypto';
 chai.use(chaiHttp);
 
 const reqObj = {
@@ -25,32 +24,24 @@ describe('atividade 01 - Rota /login', () => {
     function okRes({status}) {
       expect(status).to.be.eql(200);
     }
-    await chai.request(app).get('/login').send(reqObj.inv0).then(badRes);
-    await chai.request(app).get('/login').send(reqObj.inv1).then(badRes);
-    await chai.request(app).get('/login').send(reqObj.inv2).then(badRes);
-    await chai.request(app).get('/login').send(reqObj.inv3).then(badRes);
-    await chai.request(app).get('/login').send(reqObj.inv4).then(badRes);
-    await chai.request(app).get('/login').send(reqObj.inv5).then(badRes);
-    await chai.request(app).get('/login').send(reqObj.val).then(okRes);
+    await chai.request(app).post('/login').send(reqObj.inv0).then(badRes);
+    await chai.request(app).post('/login').send(reqObj.inv1).then(badRes);
+    await chai.request(app).post('/login').send(reqObj.inv2).then(badRes);
+    await chai.request(app).post('/login').send(reqObj.inv3).then(badRes);
+    await chai.request(app).post('/login').send(reqObj.inv4).then(badRes);
+    await chai.request(app).post('/login').send(reqObj.inv5).then(badRes);
+    await chai.request(app).post('/login').send(reqObj.val).then(okRes);
   });
   it('deve responder ao usuário validado com um token'+
   ' de 12 caracteres criado aleatóriamente', async () => {
-    const token = '1234123412341234';
-    Sinon.stub(crypto, 'randomBytes').returns({
-      toString: () => token,
-    });
-    await chai.request(app).get('/login')
+    await chai.request(app).post('/login')
         .send(reqObj.val)
         .then(({body}) => {
-          expect(body).to.be.eql({token});
-        });
-
-    Sinon.restore();
-
-    await chai.request(app).get('/login')
-        .send(reqObj.val)
-        .then(({body}) => {
-          expect(body.token).to.have.length(12);
+          const {token} = body;
+          expect(typeof token).to.be.equals('string');
+          expect(token).to.have.length(12);
+          expect(token).to.match(/[a-zA-Z]/);
+          expect(token).to.match(/[0-9]/);
         });
   });
 });
