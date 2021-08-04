@@ -2,7 +2,7 @@ import chai, {expect} from 'chai';
 import app from '../index.js';
 import chaiHttp from 'chai-http';
 import Sinon from 'sinon';
-import crypto from 'crypto';
+import fetch from 'node-fetch';
 chai.use(chaiHttp);
 
 const validToken = '1234abcd5678';
@@ -37,6 +37,9 @@ const responseAPI = {
   },
 };
 
+Sinon.stub(fetch, 'Promise').returns(Promise.resolve({
+  json: () => Promise.resolve(responseAPI),
+}));
 
 describe('atividade 01 - Rota /btc/price', () => {
   it('verifica se o token recebido está no formato correto'+
@@ -66,10 +69,7 @@ describe('atividade 01 - Rota /btc/price', () => {
           expect(message).to.not.be.eqls('valid token?');
         });
   });
-  it('', async () => {
-    global.fetch = () => (Promise.resolve({
-      json: () => Promise.resolve(responseAPI),
-    }));
+  it('retorna os dados da API btc para um usuário autorizado', async () => {
     await chai.request(app).post('/btc/price')
         .send({Authorization: validToken})
         .then(({body}) => {
