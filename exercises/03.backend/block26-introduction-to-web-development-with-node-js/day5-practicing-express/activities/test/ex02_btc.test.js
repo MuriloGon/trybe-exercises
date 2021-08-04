@@ -19,26 +19,27 @@ describe('atividade 01 - Rota /btc/price', () => {
     const invalidCB = (req) => expect(req.status).to.be.eqls(400);
     const validCB = (req) => expect(req.status).to.be.eqls(200);
     await chai.request(app).post('/btc/price')
-        .send({token: invalidToken1}).then(invalidCB);
+        .send({Authorization: invalidToken1}).then(invalidCB);
     await chai.request(app).post('/btc/price')
-        .send({token: invalidToken2}).then(invalidCB);
+        .send({Authorization: invalidToken2}).then(invalidCB);
     await chai.request(app).post('/btc/price')
-        .send({token: invalidToken3}).then(invalidCB);
+        .send({Authorization: invalidToken3}).then(invalidCB);
     await chai.request(app).post('/btc/price')
-        .send({token: invalidToken4}).then(invalidCB);
+        .send({Authorization: invalidToken4}).then(invalidCB);
     await chai.request(app).post('/btc/price')
-        .send({token: invalidToken5}).then(invalidCB);
+        .send({Authorization: invalidToken5}).then(invalidCB);
     await chai.request(app).post('/btc/price')
-        .send({token: validToken}).then(validCB);
+        .send({Authorization: validToken}).then(validCB);
   });
   it('deve retornar {message: "invalid token"} quando'+
     ' o token enviador estiver fora do padrão esperado', async () => {
     await chai.request(app).post('/btc/price')
-        .send({token: invalidToken1}).then(({body})=> {
+        .send({message: invalidToken1}).then(({body})=> {
           const {message} = body;
           expect(message).to.exist;
           expect(message).to.be.eqls('invalid token');
           expect(message).to.not.be.eqls('valid token?');
         });
   });
+  it('', () => {});
 });
