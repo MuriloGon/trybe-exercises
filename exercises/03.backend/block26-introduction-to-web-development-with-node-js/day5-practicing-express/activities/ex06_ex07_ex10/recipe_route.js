@@ -38,18 +38,16 @@ const validatePostData = (req, res, next) => {
   next();
 };
 
-router.use(validateIdMW);
-
-router.get('/:id', ({recipe, recipeId}, res) => {
+router.get('/:id', validateIdMW, ({recipe, recipeId}, res) => {
   res.status(200).json(recipe);
 });
 
-router.delete('/:id', ({recipe, recipeId}, res) => {
+router.delete('/:id', validateIdMW, ({recipe, recipeId}, res) => {
   data = data.filter((item) => item.id != recipeId);
   res.status(200).json(recipe);
 });
 
-router.post('/:id',
+router.post('/:id', validateIdMW,
     validatePostData,
     ({recipe, recipeId, body}, res) => {
       const recipeIndex = data.findIndex((item) => item.id == recipeId);
@@ -58,5 +56,29 @@ router.post('/:id',
       res.status(200).json(recipe);
     },
 );
+
+router.post('/:id/ingredients', validateIdMW, (req, res) => {
+  const {insert=[], remove=[]} = req.body;
+
+  if (!insert && !remove) {
+    return res.status(400)
+        .json({message: '(insert|remove|both) missing '});
+  }
+
+  if (insert && !Array.isArray(insert)) {
+    return res.status(400).json({message: 'insert must be an array'});
+  }
+
+  if (remove && !Array.isArray(remove)) {
+    return res.status(400).json({message: 'remove must be an array'});
+  }
+  const recipeIndex = data.findIndex((item) => item.id == req.recipeId);
+
+  data[recipeIndex].ingredients = [...data[recipeIndex].ingredients, ...insert];
+  data[recipeIndex].ingredients = data[recipeIndex].ingredients
+      .filter((item) => !remove.includes(item));
+
+  res.status(200).json(data[recipeIndex]);
+});
 
 export default router;
