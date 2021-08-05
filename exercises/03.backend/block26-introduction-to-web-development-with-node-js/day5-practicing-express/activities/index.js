@@ -5,6 +5,7 @@ import post from './ex03/posts_route.js';
 import user from './ex04/user_route.js';
 import operations from './ex05/operations_route.js';
 import recipe from './ex06_ex07/recipe_route.js';
+import comments from './ex08/comments_route.js';
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use('/posts/', post);
 app.use('/user/', user);
 app.use('/:operation/:num1/:num2', operations);
 app.use('/recipe', recipe);
+app.use('/comments', comments);
 
 app.listen(process.env.PORT);
 
