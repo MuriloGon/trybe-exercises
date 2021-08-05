@@ -1,17 +1,8 @@
-import {Router, json} from 'express';
+import {Router} from 'express';
 import dta from './data.js';
 let data = dta;
 
 const router = Router();
-router.use(json());
-router.use(function(error, req, res, next) {
-  if (error instanceof SyntaxError) {
-    return res.status(500).json({msg: 'erro interno'});
-  } else {
-    next(error);
-  }
-});
-
 
 router.get('/', (_req, res) => {
   res.status(200).json(data);
@@ -47,17 +38,18 @@ const validatePostData = (req, res, next) => {
   next();
 };
 
-router.get('/:id', validateIdMW, ({recipe, recipeId}, res) => {
+router.use(validateIdMW);
+
+router.get('/:id', ({recipe, recipeId}, res) => {
   res.status(200).json(recipe);
 });
 
-router.delete('/:id', validateIdMW, ({recipe, recipeId}, res) => {
+router.delete('/:id', ({recipe, recipeId}, res) => {
   data = data.filter((item) => item.id != recipeId);
   res.status(200).json(recipe);
 });
 
 router.post('/:id',
-    validateIdMW,
     validatePostData,
     ({recipe, recipeId, body}, res) => {
       const recipeIndex = data.findIndex((item) => item.id == recipeId);
