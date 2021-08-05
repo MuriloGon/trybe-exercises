@@ -4,7 +4,7 @@ import btc from './ex02/btc_route.js';
 import post from './ex03/posts_route.js';
 import user from './ex04/user_route.js';
 import operations from './ex05/operations_route.js';
-import recipe from './ex06/recipe_route.js';
+import recipe from './ex06_ex07/recipe_route.js';
 
 const app = express();
 
