@@ -7,7 +7,7 @@ async function create(firstName, lastName, email, password) {
   const data = await users.insertOne({
     firstName, lastName, email, password,
   });
-  return data;
+  return data.insertedId;
 }
 
 async function getAll() {

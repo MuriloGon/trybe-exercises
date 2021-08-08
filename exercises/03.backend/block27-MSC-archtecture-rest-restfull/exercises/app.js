@@ -1,6 +1,7 @@
 const express = require('express');
 const { createValidation } = require('./middlewares/User');
-const User = require('./models/mongodb/User');
+// const Model = require('./models/mongodb/User');
+const Model = require('./models/mysql/User');
 
 const app = express();
 app.use(express.json());
@@ -9,7 +10,7 @@ app.post('/user', createValidation, async (req, res) => {
   const {
     firstName, lastName, email, password,
   } = req.body;
-  const { insertedId: id } = await User.create(firstName, lastName, email, password);
+  const id = await Model.create(firstName, lastName, email, password);
   res.status(201).json({
     id,
     firstName,
@@ -20,13 +21,13 @@ app.post('/user', createValidation, async (req, res) => {
 });
 
 app.get('/user', async (_req, res) => {
-  const data = await User.getAll();
+  const data = await Model.getAll();
   res.json(data);
 });
 
 app.get('/user/:id', async (req, res) => {
   const { id } = req.params;
-  const data = await User.getById(id);
+  const data = await Model.getById(id);
   res.json(data);
 });
 
@@ -36,7 +37,7 @@ app.put('/user/:id', createValidation, async (req, res) => {
     firstName, lastName, email, password,
   } = req.body;
 
-  const matches = await User.updateById(id, firstName, lastName, email, password);
+  const matches = await Model.updateById(id, firstName, lastName, email, password);
   if (matches === null) return res.status(400).json({ error: true, message: 'id inválido' });
 
   if (matches === 0) {
