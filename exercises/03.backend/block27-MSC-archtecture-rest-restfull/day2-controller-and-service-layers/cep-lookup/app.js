@@ -9,7 +9,9 @@ app.use(express.json());
 
 app.get('/ping', Ping.getPong);
 
-app.get('/cep/:cep', validateCep, Cep.getCEP);
+app.get('/cep/:cep', validateCep.cepValidationParam, Cep.getCEP);
+
+app.post('/cep', validateCep.bodyValidation, Cep.postCEP);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
