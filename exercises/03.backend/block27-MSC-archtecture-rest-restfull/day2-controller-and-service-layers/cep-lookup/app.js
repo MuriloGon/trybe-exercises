@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.get('/ping', Ping.getPong);
 
-app.get('/cep/:cep', validateCep.cepValidationParam, Cep.getCEP);
+app.get('/cep/:cep', validateCep.cepValidationParam, Cep.getCEP, Cep.createCepFromAPI);
 
 app.post('/cep', validateCep.bodyValidation, Cep.postCEP);
 

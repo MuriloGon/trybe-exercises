@@ -7,8 +7,9 @@ module.exports = class Ceps {
 
   async getCepByCep(cep) {
     const data = await this.model.getByCEP(cep);
-    if (data.length === 0) {
-      return ({ status: 404, error: { code: 'notFound', message: 'CEP não encontrado' } });
+    const { status } = data;
+    if (status) {
+      return data;
     }
     return data[0];
   }

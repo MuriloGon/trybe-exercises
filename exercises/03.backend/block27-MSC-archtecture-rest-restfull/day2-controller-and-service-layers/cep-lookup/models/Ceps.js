@@ -11,6 +11,14 @@ async function getByCEP(cep) {
   SELECT cep, logradouro, bairro, localidade, uf 
   FROM cep_lookup.ceps WHERE cep=?;`;
   const [data] = await conn.execute(q, [cep]);
+
+  if (data.length === 0) {
+    const status = 404;
+    const code = 'notFound';
+    const message = 'cep not found';
+    return { status, error: { code, message } };
+  }
+
   return data;
 }
 
@@ -38,3 +46,26 @@ module.exports = {
   getByCEP,
   createCEP,
 };
+
+/*
+
+ if (data.length === 0) {
+    const response = await ViaCepAPI.getByCep(cepInput);
+    const { erro } = response;
+    if (erro) {
+      const status = 404;
+      const code = 'notFound';
+      const message = 'CEP não encontrado';
+      return { status, error: { code, message } };
+    }
+
+    const {
+      cep, logradouro, bairro, localidade, uf,
+    } = response;
+    const out = {
+      cep: cep.replace('-', ''), logradouro, bairro, localidade, uf,
+    };
+    await createCEP(cep.replace('-', ''), logradouro, bairro, localidade, uf);
+    return [out];
+  }
+*/
