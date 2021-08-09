@@ -1,17 +1,16 @@
 const express = require('express');
-const ProductModel = require('../models/productModel');
+const ProductModel = require('../models/mysql/productModel');
 
 const router = express.Router();
 
 // GET /products/
-router.get('/', async (req, res /* next */) => {
+router.get('/', async (_req, res) => {
   const products = await ProductModel.getAll();
-
   res.status(200).json(products);
 });
 
 // GET /products/:id | params -> { id }
-router.get('/:id', async (req, res /* next */) => {
+router.get('/:id', async (req, res) => {
   const { id } = req.params;
   const product = await ProductModel.getById(id);
 
