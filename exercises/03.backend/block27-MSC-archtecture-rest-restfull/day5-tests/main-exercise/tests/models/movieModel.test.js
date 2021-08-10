@@ -7,10 +7,10 @@ const MoviesModel = require('../../models/movieModel');
 
 describe('Busca todos os filmes no BD', () => {
   describe('quando não existe nenhum filme criado', async () => {
-    const DBServer = await MongoMemoryServer.create();
+    const DBServer = new MongoMemoryServer();
 
     before(async () => {
-      const URLMock = DBServer.getUri();
+      const URLMock = await DBServer.getUri();
       const connectionMock = await MongoClient
         .connect(URLMock, {
           useNewUrlParser: true,
@@ -39,11 +39,11 @@ describe('Busca todos os filmes no BD', () => {
     });
   });
 
-  describe('quando existem filmes criados', async () => {
-    const DBServer = await MongoMemoryServer.create();
+  describe('quando existem filmes criados', () => {
+    const DBServer = new MongoMemoryServer();
 
     before(async () => {
-      const URLMock = DBServer.getUri();
+      const URLMock = await DBServer.getUri();
       const connectionMock = await MongoClient
         .connect(URLMock, {
           useNewUrlParser: true,
@@ -63,7 +63,7 @@ describe('Busca todos os filmes no BD', () => {
     });
 
     after(async () => {
-      MongoClient.connect().restore();
+      MongoClient.connect.restore();
       await DBServer.stop();
     });
 
@@ -93,8 +93,8 @@ describe('Busca todos os filmes no BD', () => {
   });
 });
 
-describe('Insere um novo filme no BD', async () => {
-  const DBServer = await MongoMemoryServer.create();
+describe('Insere um novo filme no BD', () => {
+  const DBServer = new MongoMemoryServer();
   const payloadMovie = {
     title: 'Example Movie',
     directedBy: 'Jane Dow',
@@ -102,7 +102,7 @@ describe('Insere um novo filme no BD', async () => {
   };
 
   before(async () => {
-    const URLMock = DBServer.getUri();
+    const URLMock = await DBServer.getUri();
 
     const connectionMock = await MongoClient
       .connect(URLMock, {
