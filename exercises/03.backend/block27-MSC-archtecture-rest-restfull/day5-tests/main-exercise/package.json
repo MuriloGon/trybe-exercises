@@ -1,0 +1,26 @@
+{
+  "name": "main-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha tests --recursive --exit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^4.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.0",
+    "mocha": "^9.0.3",
+    "mongodb-memory-server": "^7.3.6",
+    "sinon": "^11.1.2"
+  }
+}
