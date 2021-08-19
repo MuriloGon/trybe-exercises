@@ -1,0 +1,8 @@
+[
+  { "username": "sérgio-murilo", "password": "123123123", "admin": false },
+  { "username": "mumumu", "password": "123123123", "admin": false },
+  { "username": "teste", "password": "123123123", "admin": false },
+  { "username": "testmme", "password": "123123123", "admin": false },
+  { "username": "novouser", "password": "123222", "admin": false },
+  { "username": "novouse2r", "password": "123222", "admin": true }
+]
