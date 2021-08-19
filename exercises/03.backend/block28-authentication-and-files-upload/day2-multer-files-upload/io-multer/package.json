@@ -1,0 +1,28 @@
+{
+  "name": "io-multer",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js",
+    "debug": "nodemon index.js",
+    "lint": "eslint **/*.js"
+  },
+  "keywords": [],
+  "author": "sérgio murilo gonçalves silva <murilo.gon@live.com>",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "eslint-config-trybe-backend": "^1.0.3",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.0",
+    "multer": "^1.4.3"
+  }
+}
