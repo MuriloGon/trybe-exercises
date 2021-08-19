@@ -21,7 +21,7 @@ const uploadMutter = multer({
     const files = await fs.readdir(process.env.PWD + '/files/');
     const hasDuplicate = files.some((fullname) => {
       const name = fullname.match(/\d+-([\s\S]+)/)[1];
-      console.log({fullname, name})
+      console.log({ fullname, name })
       return name === file.originalname;
     })
 
