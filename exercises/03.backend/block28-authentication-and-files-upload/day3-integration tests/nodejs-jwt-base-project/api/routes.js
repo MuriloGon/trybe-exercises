@@ -1,5 +1,9 @@
+const getPosts = require('../controllers/posts');
+const createUsers = require('../controllers/createUser');
+const login = require('../controllers/login');
+
 module.exports = {
-  getPosts: require('../controllers/posts'),
-  createUsers: require('../controllers/createUser'),
-  login: require('../controllers/login'),
+  getPosts,
+  createUsers,
+  login,
 };
